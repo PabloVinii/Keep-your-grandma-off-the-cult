@@ -1,6 +1,33 @@
 ﻿title: Start
 tags:
+position: -185,-19
 ---
-Hello
-World
+<<set $falou_com_o_azul to false>>
+<<set $falou_com_o_vermelho to false>>
+
+Começou
+===
+
+title: vermelho
+position: -187,-192
+---
+vermelho:eu so o vermelho
+Player: salve
+<<if $falou_com_o_azul == true>>
+    Player: falei co azul, conhece o figura?
+    vermelho: conheço, é um arrombado
+<<endif>>
+<<set $falou_com_o_vermelho to true>>
+===
+
+title: azul
+position: -185,157
+---
+Azul: eu sou o azul
+<<if $falou_com_o_vermelho == true>>
+    Player: falei co vermelho, conhece o figura?
+    Player: ele falo que tu é gay
+    Azul: fia da puta
+<<endif>>
+<<set $falou_com_o_azul to true>>
 ===
