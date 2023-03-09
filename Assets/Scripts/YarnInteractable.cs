@@ -5,11 +5,14 @@ using Yarn.Unity;
 
 public class YarnInteractable : MonoBehaviour
 {
-    [SerializeField] private string conversationStartNode;
     private DialogueRunner dialogueRunner;
+
+    [SerializeField] private string conversationStartNode;
+    [SerializeField] private string iconName;
 
     private bool interactable = true;
     private bool isCurrentConversation = false;
+    private bool playerInside;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +21,43 @@ public class YarnInteractable : MonoBehaviour
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
     }
 
-    public void OnMouseDown() {
-        if (interactable && !dialogueRunner.IsDialogueRunning) {
-            StartConversation();
+    private void Update()
+    {
+        if (playerInside && Input.GetKeyDown(KeyCode.E))
+        {
+            if (interactable && !dialogueRunner.IsDialogueRunning)
+            {
+                StartConversation();
+            }
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInside = true; //player dentro da area de colisão
+
+            var icon = transform.Find(iconName)?.gameObject; //Captura gameobject filho
+            if (icon != null)
+            {
+                icon.SetActive(true);
+            }
+        }
+    }
+
+
+    public void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("Player"))
+        {
+            playerInside = false; //player fora da area de colisão
+
+            var icon = transform.Find(iconName)?.gameObject; //Captura gameobject filho
+            if (icon != null)
+            {
+                icon.SetActive(false);
+            }
+        } 
     }
 
     private void StartConversation() {
@@ -34,7 +70,7 @@ public class YarnInteractable : MonoBehaviour
     private void EndConversation() {
         if (isCurrentConversation) {
             isCurrentConversation = false;
-            Debug.Log($"Started conversation with {name}.");
+            Debug.Log($"Ended conversation with {name}.");
         }
     }
 }
