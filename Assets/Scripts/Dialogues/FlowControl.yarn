@@ -1,0 +1,55 @@
+title: Initial
+---
+<<set $numberOfSidesInATriangle = 2 + 1>>
+<<set $numberOfSidesInASquare = $numberOfSidesInATriangle + 1>>
+
+<<set $reputation  to 15>>
+<<set $gold_amount to 5>>
+
+The value of variableName is {$numberOfSidesInATriangle}.
+
+
+Companion: Hi there! What do you feel like doing today?
+
+-> Player: I'd like to buy a pie!
+    <<if $gold_amount < 10>>
+        Baker: Well, you can't afford one!
+    <<elseif $gold_amount < 15>>
+        Baker: You can almost afford one!
+    <<else>>
+        Baker: Here you go!
+    <<endif>>
+
+Guard: You're not allowed in!
+    -> Player: Sure I am! The boss knows me! <<if $reputation < 10>>
+        <<wait 1>>
+        Guard: Hmm
+        <<wait 0.5>>
+        Guard: Ok
+    -> Player: Please?
+        <<wait 1>>
+        Guard: I Think?
+        <<stop>>
+        Guard: No
+===
+
+title: Dice
+---
+// Inside an if statement:
+<<if dice(6) == 6>>
+    You rolled a six!
+<<endif>>
+
+// Inside a line:
+Gambler: My lucky number is {random_range(1,10)}!
+
+viseted: {visited("Dice")} // testar isso
+Count: {visited_count("Dice")}
+<<jump Dice>>
+===
+title: Random
+position: 0,0
+---
+{random()}
+
+===

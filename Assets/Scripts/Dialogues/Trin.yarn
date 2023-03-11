@@ -1,0 +1,54 @@
+title: intro
+---
+<<if visited("intro")>>
+    <<jump Play>>
+<<endif>>
+Trin: Ei criança
+Trin: Quer jogar um jogo?
+Player: adoraria
+Trin: Funciona assim:
+Trin: Tenho este dado de 6 lados, se cair acima de 3 você ganha
+Trin: Se cair de 3 pra baixo eu ganho.
+Player: E oque eu ganho e perco?
+Trin: ...
+<<wait 1.5>>
+Trin: Vai ser uma surpresa
+Trin: Vamos fazer uma melhor de 3
+Player: Ahmm, ok então, vamos jogar
+<<jump Play>> 
+===
+
+title: Play
+---
+<<if !visited("Play")>>
+    <<set $TrinWins to 0>>
+    <<set $PlayerWins to 0>>
+<<endif>>
+
+Trin: --Joga o dado--
+
+<<set $dice = dice(6)>>
+Trin: caiu {$dice}
+<<if $dice lte 3>>
+    Trin: Ai sim
+    <<set $TrinWins to $TrinWins + 1>>
+<<else>>
+    Player: Opa, boa
+    <<set $PlayerWins to $PlayerWins + 1>>
+<<endif>>
+
+<<if $TrinWins == 2>>
+    Trin: ahaha
+    Trin: Eu ganhhei
+    Trin: --Saca um 38 e te da um tiro na cara--
+    <<stop>>
+<<elseif $PlayerWins == 2>>
+    Player: Eu ganhei!
+    Player: E agora?
+    Trin: Vai ti fude, vou te dar porra nenhuma não
+    Player: Oxi
+    <<stop>>
+<<endif>>
+
+<<jump Play>>
+===
