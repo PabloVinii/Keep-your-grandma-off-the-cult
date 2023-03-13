@@ -366,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1758794761890393131, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
       propertyPath: m_Name
-      value: NPC (1)
+      value: Trin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
@@ -1508,7 +1508,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4

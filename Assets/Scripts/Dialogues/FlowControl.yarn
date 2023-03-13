@@ -1,4 +1,5 @@
 title: Initial
+position: -225,-213
 ---
 <<set $numberOfSidesInATriangle = 2 + 1>>
 <<set $numberOfSidesInASquare = $numberOfSidesInATriangle + 1>>
@@ -6,34 +7,23 @@ title: Initial
 <<set $reputation  to 15>>
 <<set $gold_amount to 5>>
 
-The value of variableName is {$numberOfSidesInATriangle}.
+o valor da variavel numberOfSidesInATriangle é: {$numberOfSidesInATriangle}.
 
 
-Companion: Hi there! What do you feel like doing today?
+Companion: Teste de Opções
 
--> Player: I'd like to buy a pie!
+-> Player: Opção 1
     <<if $gold_amount < 10>>
-        Baker: Well, you can't afford one!
+        Baker: sem gold suficiente
     <<elseif $gold_amount < 15>>
-        Baker: You can almost afford one!
+        Baker: gold suficiente
     <<else>>
         Baker: Here you go!
     <<endif>>
-
-Guard: You're not allowed in!
-    -> Player: Sure I am! The boss knows me! <<if $reputation < 10>>
-        <<wait 1>>
-        Guard: Hmm
-        <<wait 0.5>>
-        Guard: Ok
-    -> Player: Please?
-        <<wait 1>>
-        Guard: I Think?
-        <<stop>>
-        Guard: No
 ===
 
 title: Dice
+position: -229,22
 ---
 // Inside an if statement:
 <<if dice(6) == 6>>
@@ -41,15 +31,32 @@ title: Dice
 <<endif>>
 
 // Inside a line:
-Gambler: My lucky number is {random_range(1,10)}!
+Gambler: Meu numero da sorte é: {random_range(1,10)}!
 
-viseted: {visited("Dice")} // testar isso
-Count: {visited_count("Dice")}
+viseted: {visited("Dice")}
+Count: Ja visitou este Node {visited_count("Dice")} vezes
 <<jump Dice>>
 ===
-title: Random
-position: 0,0
----
-{random()}
 
+title: Random
+position: -247,220
+---
+Número randomico: {random()}
+<<jump Random>>
+===
+
+title: Guarda
+position: 203,-70
+---
+Guard: Teste de reputação, uma opção só aparece se reputação for mais que 10
+    -> Player: tenho mais de 10 de reputação <<if $reputation < 10>>
+        <<wait 1>>
+        Guard: Tem mesmo, parabens
+        <<wait 0.5>>
+        Guard: Essa linha não vai aparecer.
+    -> Player: Não tenho 10 de reputação
+        <<wait 1>>
+        Guard: Não tem mesmo
+        <<stop>>
+        Guard: Essa linha também não vai aparecer
 ===

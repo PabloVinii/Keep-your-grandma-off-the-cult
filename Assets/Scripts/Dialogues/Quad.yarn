@@ -3,6 +3,9 @@ tags:
 ---
 
 <<if !visited("QuadDialogue01")>> 
+  <<leap NPC>> //Comando personalizado
+  <<spawn NPC Trin spawn>> //spawna o Trin, spawn muda para true
+  
   Quadrado: Bem-vindo, estranho! Nunca te vi por aqui antes.
   Quadrado: Se precisar de ajuda, é só falar comigo.
 <<else>>

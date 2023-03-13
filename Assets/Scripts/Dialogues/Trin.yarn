@@ -1,8 +1,10 @@
 title: intro
+position: -56,-76
 ---
 <<if visited("intro")>>
     <<jump Play>>
 <<endif>>
+
 Trin: Ei criança
 Trin: Quer jogar um jogo?
 Player: adoraria
@@ -19,6 +21,7 @@ Player: Ahmm, ok então, vamos jogar
 ===
 
 title: Play
+position: -52,139
 ---
 <<if !visited("Play")>>
     <<set $TrinWins to 0>>
@@ -41,12 +44,14 @@ Trin: caiu {$dice}
     Trin: ahaha
     Trin: Eu ganhhei
     Trin: --Saca um 38 e te da um tiro na cara--
+    <<set $TrinWins to 0>>
     <<stop>>
 <<elseif $PlayerWins == 2>>
     Player: Eu ganhei!
     Player: E agora?
     Trin: Vai ti fude, vou te dar porra nenhuma não
     Player: Oxi
+    <<set $PlayerWins to 0>>
     <<stop>>
 <<endif>>
 
