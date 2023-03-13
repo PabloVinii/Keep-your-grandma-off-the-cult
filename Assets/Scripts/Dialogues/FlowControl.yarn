@@ -1,0 +1,62 @@
+title: Initial
+position: -225,-213
+---
+<<set $numberOfSidesInATriangle = 2 + 1>>
+<<set $numberOfSidesInASquare = $numberOfSidesInATriangle + 1>>
+
+<<set $reputation  to 15>>
+<<set $gold_amount to 5>>
+
+o valor da variavel numberOfSidesInATriangle é: {$numberOfSidesInATriangle}.
+
+
+Companion: Teste de Opções
+
+-> Player: Opção 1
+    <<if $gold_amount < 10>>
+        Baker: sem gold suficiente
+    <<elseif $gold_amount < 15>>
+        Baker: gold suficiente
+    <<else>>
+        Baker: Here you go!
+    <<endif>>
+===
+
+title: Dice
+position: -229,22
+---
+// Inside an if statement:
+<<if dice(6) == 6>>
+    You rolled a six!
+<<endif>>
+
+// Inside a line:
+Gambler: Meu numero da sorte é: {random_range(1,10)}!
+
+viseted: {visited("Dice")}
+Count: Ja visitou este Node {visited_count("Dice")} vezes
+<<jump Dice>>
+===
+
+title: Random
+position: -247,220
+---
+Número randomico: {random()}
+<<jump Random>>
+===
+
+title: Guarda
+position: 203,-70
+---
+Guard: Teste de reputação, uma opção só aparece se reputação for mais que 10
+    -> Player: tenho mais de 10 de reputação <<if $reputation < 10>>
+        <<wait 1>>
+        Guard: Tem mesmo, parabens
+        <<wait 0.5>>
+        Guard: Essa linha não vai aparecer.
+    -> Player: Não tenho 10 de reputação
+        <<wait 1>>
+        Guard: Não tem mesmo
+        <<stop>>
+        Guard: Essa linha também não vai aparecer
+===
