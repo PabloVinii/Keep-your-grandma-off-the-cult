@@ -45,6 +45,7 @@ Trin: caiu {$dice}
     Trin: Eu ganhhei
     Trin: --Saca um 38 e te da um tiro na cara--
     <<set $TrinWins to 0>>
+    <<set $PlayerWins to 0>>
     <<stop>>
 <<elseif $PlayerWins == 2>>
     Player: Eu ganhei!
@@ -52,6 +53,7 @@ Trin: caiu {$dice}
     Trin: Vai ti fude, vou te dar porra nenhuma não
     Player: Oxi
     <<set $PlayerWins to 0>>
+    <<set $TrinWins to 0>>
     <<stop>>
 <<endif>>
 

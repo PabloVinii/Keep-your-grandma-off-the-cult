@@ -12,6 +12,7 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 2f47bc9f474d61a41b9f4171254aa089, type: 3}
   - {fileID: 6391573757903218779, guid: 11560236b0a63b04b8f6fa1610d84c3b, type: 3}
   - {fileID: 6391573757903218779, guid: 3e27479b89e37164198e2e641af69e50, type: 3}
+  - {fileID: 6391573757903218779, guid: 57c7c315706193e43b6159388271c2e6, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $TrinWins

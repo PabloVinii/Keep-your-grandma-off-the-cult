@@ -19,7 +19,6 @@ public class YarnInteractable : MonoBehaviour
     {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
-        dialogueRunner.VariableStorage.SetValue("$playerName", "John");
     }
 
     private void Update()
