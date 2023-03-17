@@ -10,8 +10,35 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
   - {fileID: 6391573757903218779, guid: 2f47bc9f474d61a41b9f4171254aa089, type: 3}
+  - {fileID: 6391573757903218779, guid: 11560236b0a63b04b8f6fa1610d84c3b, type: 3}
+  - {fileID: 6391573757903218779, guid: 3e27479b89e37164198e2e641af69e50, type: 3}
+  - {fileID: 6391573757903218779, guid: 57c7c315706193e43b6159388271c2e6, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $TrinWins
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Trin.yarn, node Play
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 11560236b0a63b04b8f6fa1610d84c3b, type: 3}
+  - name: $PlayerWins
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Trin.yarn, node Play
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 11560236b0a63b04b8f6fa1610d84c3b, type: 3}
+  - name: $dice
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Trin.yarn, node Play
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 11560236b0a63b04b8f6fa1610d84c3b, type: 3}
   defaultLanguage: pt-BR
   languagesToSourceAssets: []
   useAddressableAssets: 0

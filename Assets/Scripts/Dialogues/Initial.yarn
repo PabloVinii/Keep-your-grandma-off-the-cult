@@ -2,29 +2,4 @@
 tags:
 ---
 Começou
-<<set $foundSquare to false>>
-===
-
-title: Square
----
-<<if $foundSquare == false>> 
-  Quadrado: Bem-vindo, estranho! Nunca te vi por aqui antes.
-  Quadrado: Se precisar de ajuda, é só falar comigo.
-  <<set $foundSquare = true>>
-<<else>>
-  <<jump SquareDialogue02>>
-<<endif>>
-===
-
-title: SquareDialogue02
----
-Quadrado: Olá de novo! Como posso te ajudar hoje?
-
--> Player: Onde estou?
-  Quadrado: KansasCity
--> Player: Quem é você?
-  Quadrado: Meu nome é Quadrado
--> Player: Essa casa é sua?
-  Quadrado: Sim
-até mais
 ===

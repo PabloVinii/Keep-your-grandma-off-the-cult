@@ -73,4 +73,22 @@ public class YarnInteractable : MonoBehaviour
             Debug.Log($"Ended conversation with {name}.");
         }
     }
+
+    //Comandos personalizados do Yarn
+    [YarnCommand("leap")]
+    public void Leap() {
+        Debug.Log($"{name} is leaping!");
+    }
+
+    [YarnCommand("spawn")]
+    public void Spawn(GameObject obj, bool spawn = false) {
+        // spawn item
+        if (spawn) {
+            Debug.Log("spawno");
+            Instantiate(obj, Vector3.zero, Quaternion.identity);
+        }else {
+            Debug.Log("nao spawno");
+        }
+
+    }
 }
