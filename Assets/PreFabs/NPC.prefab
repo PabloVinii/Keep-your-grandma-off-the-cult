@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1758794761890393129}
   - component: {fileID: 1758794761890393128}
   - component: {fileID: 1818775207}
+  - component: {fileID: 1759676246516558620}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -228,3 +229,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.9631946
+--- !u!114 &1759676246516558620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758794761890393131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c25eca18bdfe44094c35b3f334ddf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    reward: 0

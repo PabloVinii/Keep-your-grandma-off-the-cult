@@ -1,0 +1,16 @@
+﻿title: Fab
+tags:
+---
+<<if !visited("Fab")>>
+    Olá, aceite esta missão
+    <<quest Fab>>
+<<else>>
+    <<jump fab01>>
+<<endif>>
+===
+title: fab01
+---
+Concluiui sua missão?
+-> Player: Sim
+-> Player: Não
+===

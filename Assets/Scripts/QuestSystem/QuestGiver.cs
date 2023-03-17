@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class QuestGiver : MonoBehaviour
 {
     public PlayerMovement player;
     public Quest quest;
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player"))
-        {
-            quest.isActive = true;
-            player.questList.Add(quest);
-        }
+    [YarnCommand("quest")]
+    public void Quest() {
+        quest.isActive = true;
+        player.questList.Add(quest);
+        Debug.Log("quest aceita");
     }
     }
     
