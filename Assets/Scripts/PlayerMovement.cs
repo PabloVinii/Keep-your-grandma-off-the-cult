@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public List<Quest> questList = new List<Quest>();
     public float playerSpeed = 7f;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
