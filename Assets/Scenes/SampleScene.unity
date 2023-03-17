@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 1843788620}
-  node: $Foundglasses
+  varYarn: $Foundglasses
 --- !u!1 &1109793953
 GameObject:
   m_ObjectHideFlags: 0

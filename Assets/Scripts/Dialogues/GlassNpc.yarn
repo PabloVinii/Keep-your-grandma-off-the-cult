@@ -19,7 +19,6 @@ title: GlassesNpc01
 ---
 
 Claudio: Olá meu jovem, encontrou meus óculos?
-{$Foundglasses}
 -> Player: Sim encontrei! Aqui está <<if $Foundglasses is true>>
     Claudio: ahh, que ótimo, muito obrigado
     Claudio: Tome aqui uns trocados para você comprar alguns doces

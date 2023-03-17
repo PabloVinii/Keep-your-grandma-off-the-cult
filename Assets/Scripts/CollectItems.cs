@@ -6,12 +6,12 @@ using Yarn.Unity;
 public class CollectItems : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
-    public string node;
+    public string varYarn;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player"))
         {
-            dialogueRunner.VariableStorage.SetValue(node, true);
+            dialogueRunner.VariableStorage.SetValue(varYarn, true);
             Destroy(this.gameObject);
         }
     }
