@@ -5,7 +5,7 @@ using Yarn.Unity;
 
 public class QuestGiver : MonoBehaviour
 {
-    public PlayerMovement player;
+    public PlayerActions player;
     public Quest quest;
 
     [YarnCommand("quest")]

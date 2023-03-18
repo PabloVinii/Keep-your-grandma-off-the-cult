@@ -10,4 +10,14 @@ public class Quest
     public string title;
     public string description;
     public int reward;
+
+    public QuestGoal goal;
+
+    public void Complete()
+    {
+        isActive = false;
+        Debug.Log(title + "completado");
+    }
+
+    
 }
