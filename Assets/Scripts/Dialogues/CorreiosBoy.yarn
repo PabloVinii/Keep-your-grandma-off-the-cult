@@ -9,7 +9,7 @@ tags:
     Correios Boy: se ver elas por ai pode me entregar?
     -> Player: Demoro
         Correios Boy: ótimo vou ficar aqui no aguardo
-        <<quest CorreiosBoy>>
+        <<quest CorreiosBoy 2>>
     -> Player: To meio ocupado, infelizmente não vai rolar
         Correios Boy: caraio maluco, então ta bom
 <<else>>
@@ -22,7 +22,7 @@ tags:
 Correios Boy: opa achou as cartas?
 -> Player: Sim! Aqui estão <<if $foundLetter == true>>
     Correios Boy: Perfeito, tome aqui R$2
-    <<finishQuest CorreiosBoy>>
+    <<finishQuest CorreiosBoy 2>>
 -> Player: Ainda não
 
 ===
