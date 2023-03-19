@@ -14,20 +14,19 @@ public class PlayerActions : MonoBehaviour
     {
         
         ToggleFlashLight();
+    }
+
+    public Quest GetQuestById(int id)
+    {
         foreach (Quest quest in questList)
         {
-            // Verifica se a quest está ativa e se o jogador pressionou a tecla E
-            if (quest.isActive && Input.GetKeyDown(KeyCode.Q))
+            if (quest.questId == id)
             {
-                quest.goal.ItemCollected();
-
-                // Verifica se a meta da quest foi alcançada
-                if (quest.goal.isReached())
-                {
-                    quest.Complete();
-                }
+                return quest;
             }
         }
+
+        return null;
     }
 
     void ToggleFlashLight()

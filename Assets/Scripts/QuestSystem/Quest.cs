@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Quest
 {
+    public int questId;
     public bool isActive;    
 
     public string title;
