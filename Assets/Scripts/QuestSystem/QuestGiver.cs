@@ -8,7 +8,11 @@ public class QuestGiver : MonoBehaviour
     public List<Quest> quests = new List<Quest>();
 
     public PlayerActions player;
-    //public Quest quest;
+
+    private void Start()
+    {
+        ValidateQuestIds();
+    }
 
     [YarnCommand("listQuests")]
     public void ListQuests()
@@ -54,6 +58,23 @@ public class QuestGiver : MonoBehaviour
         else
         {
             Debug.Log("Quest " + questId + " não encontrada");
+        }
+    }
+
+    private void ValidateQuestIds()
+    {
+        List<int> idList = new List<int>();
+
+        foreach (Quest quest in quests)
+        {
+            if (idList.Contains(quest.questId))
+            {
+                Debug.LogError("Quest ID already exists: " + quest.questId);
+            }
+            else
+            {
+                idList.Add(quest.questId);
+            }
         }
     }
     }
