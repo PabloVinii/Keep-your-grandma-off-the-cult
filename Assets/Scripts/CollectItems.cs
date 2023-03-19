@@ -22,7 +22,6 @@ public class CollectItems : MonoBehaviour
                 // Verifica se a meta da quest foi alcançada
                 if (relatedQuest.goal.isReached())
                 {
-                    relatedQuest.Complete();
                     dialogueRunner.VariableStorage.SetValue(varYarn, true);
                 }
 

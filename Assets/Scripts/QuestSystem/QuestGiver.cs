@@ -14,5 +14,10 @@ public class QuestGiver : MonoBehaviour
         player.questList.Add(quest);
         Debug.Log("quest aceita");
     }
+
+    [YarnCommand("finishQuest")]
+    public void FinishQuest() {
+        quest.Complete();
+    }
     }
     
