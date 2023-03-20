@@ -5,9 +5,9 @@ using Yarn.Unity;
 
 public class QuestGiver : MonoBehaviour
 {
-    public List<Quest> quests = new List<Quest>();
-
     public PlayerActions player;
+
+    public List<Quest> quests = new List<Quest>();
 
     private void Start()
     {
