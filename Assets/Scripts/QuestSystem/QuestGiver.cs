@@ -9,6 +9,9 @@ public class QuestGiver : MonoBehaviour
 
     public List<Quest> quests = new List<Quest>();
 
+    private void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
+    }
     private void Start()
     {
         ValidateQuestIds();
