@@ -2,7 +2,7 @@ title: QuadDialogue01
 tags:
 ---
 
-<<if !visited("QuadDialogue01")>> 
+<<if !visited("QuadDialogue01")>>
   <<leap NPC>> //Comando personalizado
   <<spawn NPC Trin spawn>> //spawna o Trin, spawn muda para true
 

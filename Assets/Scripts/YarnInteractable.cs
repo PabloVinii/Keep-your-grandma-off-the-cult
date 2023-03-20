@@ -8,7 +8,7 @@ public class YarnInteractable : MonoBehaviour
     private DialogueRunner dialogueRunner;
 
     [SerializeField] private string conversationStartNode;
-    [SerializeField] private string iconName;
+    [SerializeField] private Transform icon;
 
     private bool interactable = true;
     private bool isCurrentConversation = false;
@@ -38,10 +38,9 @@ public class YarnInteractable : MonoBehaviour
         {
             playerInside = true; //player dentro da area de colisão
 
-            var icon = transform.Find(iconName)?.gameObject; //Captura gameobject filho
             if (icon != null)
             {
-                icon.SetActive(true);
+                icon.gameObject.SetActive(true);
             }
         }
     }
@@ -52,10 +51,9 @@ public class YarnInteractable : MonoBehaviour
         {
             playerInside = false; //player fora da area de colisão
 
-            var icon = transform.Find(iconName)?.gameObject; //Captura gameobject filho
             if (icon != null)
             {
-                icon.SetActive(false);
+                icon.gameObject.SetActive(false);
             }
         } 
     }

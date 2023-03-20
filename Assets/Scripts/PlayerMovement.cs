@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     public float playerSpeed = 7f;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
-    public bool flashLightActive = false;
-    public GameObject flashLight;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         float directionY = Input.GetAxisRaw("Vertical");
 
         playerDirection = new Vector2(directionX, directionY).normalized;
-        ToggleFlashLight();
+        
     }
 
     void FixedUpdate()
@@ -30,20 +30,5 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
     }
 
-    void ToggleFlashLight()
-    {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            if (flashLightActive == false)
-            {
-                flashLight.gameObject.SetActive(true);            
-                flashLightActive = true;
-            }
-            else
-            {
-                flashLight.gameObject.SetActive(false);
-                flashLightActive = false;
-            }
-        }
-    }
+    
 }
