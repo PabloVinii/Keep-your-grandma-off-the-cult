@@ -159,32 +159,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   quests:
-  - questId: 1
+  - questId: 0
     isActive: 0
-    title: Chaves Perdidas
-    description: "Jerry perdeu suas chaves, fa\xE7a uma boa a\xE7\xE3o em acha-las"
-    reward: 10
-    goal:
-      goalType: 1
-      requiredAmount: 1
-      currentAmount: 0
-  - questId: 1
-    isActive: 0
-    title: Chaves Perdidas
-    description: "Jerry perdeu suas chaves, fa\xE7a uma boa a\xE7\xE3o em acha-las"
-    reward: 10
+    title: 
+    description: 
+    reward: 0
     goal:
       goalType: 0
-      requiredAmount: 1
-      currentAmount: 0
-  - questId: 1
-    isActive: 0
-    title: Chaves Perdidas
-    description: "Jerry perdeu suas chaves, fa\xE7a uma boa a\xE7\xE3o em acha-las"
-    reward: 10
-    goal:
-      goalType: 0
-      requiredAmount: 1
+      requiredAmount: 0
       currentAmount: 0
 --- !u!1 &3176304906639995668
 GameObject:
