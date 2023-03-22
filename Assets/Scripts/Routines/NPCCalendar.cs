@@ -5,21 +5,23 @@ using UnityEngine;
 public class NPCCalendar : MonoBehaviour
 {
     private Itinerary activeItinerary;
-    [SerializeField] private List<DailyRoutine> routines = new List<DailyRoutine>();
     [SerializeField] private Dictionary<DayEnum, Itinerary> itineraries = new Dictionary<DayEnum, Itinerary>();
     [SerializeField] private DayNightScript dayNightScript;
 
+    [Header("Itineraries")]
+    [SerializeField] private Itinerary sundayItinerary;
+    [SerializeField] private Itinerary mondayItinerary;
+    [SerializeField] private Itinerary tuesdaytinerary;
+    [SerializeField] private Itinerary wednesdayItinerary;
+    [SerializeField] private Itinerary fridayItinerary;
+    [SerializeField] private Itinerary thursdayItinerary;
+    [SerializeField] private Itinerary saturdayItinerary;
     private void Awake()
     {
-        foreach (DailyRoutine routine in routines)
-        {
-            itineraries.Add(routine.Day, routine.Itinerary);
-        }
-
-        ChangeActiveItinerary(DayEnum.SUNDAY);
+        SetupItineraries();
+        Calendar.onDayChanged += ChangeActiveItinerary;
     }
 
-    private void OnEnable() => Calendar.onDayChanged += ChangeActiveItinerary;
     private void OnDisable() => Calendar.onDayChanged -= ChangeActiveItinerary;
 
     private void Update()
@@ -33,7 +35,18 @@ public class NPCCalendar : MonoBehaviour
         {
             activeItinerary.CleanClosedActivities();
         }
-        
+
         activeItinerary = itineraries[dayEnum];
+    }
+
+    private void SetupItineraries()
+    {
+        itineraries.Add(DayEnum.SUNDAY, sundayItinerary);
+        itineraries.Add(DayEnum.MONDAY, mondayItinerary);
+        itineraries.Add(DayEnum.TUESDAY, tuesdaytinerary);
+        itineraries.Add(DayEnum.WEDNESDAY, wednesdayItinerary);
+        itineraries.Add(DayEnum.THURSDAY, thursdayItinerary);
+        itineraries.Add(DayEnum.FRIDAY, fridayItinerary);
+        itineraries.Add(DayEnum.SATURDAY, saturdayItinerary);
     }
 }

@@ -9,6 +9,10 @@ public class Calendar : MonoBehaviour
 
     public DayEnum ActualDay { get => actualDay; private set => actualDay = value; }
 
+    private void Start()
+    {
+        onDayChanged?.Invoke(this.actualDay);
+    }
     private void OnEnable() => DayNightScript.onDayChanged += PassDay;
     private void OnDisable() => DayNightScript.onDayChanged -= PassDay;
 
