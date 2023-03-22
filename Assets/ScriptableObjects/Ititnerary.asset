@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb3b132b059279418e9f7ffb9b8cfe1, type: 3}
-  m_Name: Activity
+  m_Script: {fileID: 11500000, guid: d68dba059eb21aa4783edc5aa204b3e4, type: 3}
+  m_Name: Ititnerary
   m_EditorClassIdentifier: 
-  hour: 12
-  minute: 30
-  text: "Ol\xE1"
+  openActivities: []
+  dayNightScript: {fileID: 0}

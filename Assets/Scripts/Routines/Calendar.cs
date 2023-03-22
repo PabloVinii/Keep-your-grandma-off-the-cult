@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Calendar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static Action<DayEnum> onDayChanged;
+
+    [SerializeField] private DayEnum actualDay;
+
+    public DayEnum ActualDay { get => actualDay; private set => actualDay = value; }
+
+    private void OnEnable() => DayNightScript.onDayChanged += PassDay;
+    private void OnDisable() => DayNightScript.onDayChanged -= PassDay;
+
+    public void PassDay()
     {
-        
+        if ((int)ActualDay == 7)
+        {
+            ActualDay = DayEnum.SUNDAY;
+            onDayChanged?.Invoke(actualDay);
+            return;
+        }
+
+        ActualDay = ActualDay + 1;
+        onDayChanged?.Invoke(actualDay);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
