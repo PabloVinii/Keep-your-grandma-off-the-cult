@@ -10,6 +10,9 @@ public class CollectItems : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public string varYarn = "$";
 
+    // Referência para o script ItemListUI
+    public ItemListUI itemListUI;
+
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player"))
         {
@@ -18,6 +21,9 @@ public class CollectItems : MonoBehaviour
             {               
                 // Coleta o item
                 relatedQuest.goal.ItemCollected();
+
+                // Adiciona o item à lista de itens coletados e exibe sua sprite na UI
+                itemListUI.AddItem(gameObject);
 
                 // Verifica se a meta da quest foi alcançada
                 if (relatedQuest.goal.isReached())
