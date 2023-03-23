@@ -7,11 +7,16 @@ public class CollectItems : MonoBehaviour
 {
     public int questId;
 
-    public DialogueRunner dialogueRunner;
+    private DialogueRunner dialogueRunner;
     public string varYarn = "$";
 
     // Referência para o script ItemListUI
     public ItemListUI itemListUI;
+
+    private void Start() {
+        dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        itemListUI = FindAnyObjectByType<ItemListUI>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player"))

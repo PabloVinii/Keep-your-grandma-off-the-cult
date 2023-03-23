@@ -49,10 +49,14 @@ public class QuestGiver : MonoBehaviour
     [YarnCommand("finishQuest")]
     public void FinishQuest(int questId) {
         Quest questToFinish = player.GetQuestById(questId);
-        if (questToFinish != null && questToFinish.isActive)
+        if (questToFinish != null && questToFinish.isActive && questToFinish.goal.isReached())
         {
             questToFinish.Complete();
             Debug.Log("Quest " + questId + " finalizada");
+        }
+        else if (questToFinish != null && questToFinish.isActive && !questToFinish.goal.isReached())
+        {
+            Debug.Log("Quest " + questId + "não finazilada");
         }
         else if (questToFinish != null && !questToFinish.isActive)
         {

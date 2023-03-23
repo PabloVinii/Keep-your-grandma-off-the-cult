@@ -1,0 +1,17 @@
+﻿title: teste
+tags:
+---
+<<if !visited("teste")>>
+    iniciar
+    <<quest teste 3>>
+<<else>>
+    <<jump test2>>
+<<endif>>
+===
+
+title: test2
+tags:
+---
+<<finishQuest teste 3>>
+<<removeItem teste Image(Clone)>>
+===

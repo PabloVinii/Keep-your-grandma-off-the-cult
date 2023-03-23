@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8475015839534136275}
   - component: {fileID: 550898395124944888}
   m_Layer: 0
-  m_Name: Item
+  m_Name: GatheringItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
