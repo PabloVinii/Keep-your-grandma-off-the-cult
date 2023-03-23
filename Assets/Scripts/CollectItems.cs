@@ -31,8 +31,6 @@ public class CollectItems : MonoBehaviour
                     dialogueRunner.VariableStorage.SetValue(varYarn, true);
                 }
 
-                // Remove o item do jogo
-                Destroy(gameObject);
             }
         }
     }

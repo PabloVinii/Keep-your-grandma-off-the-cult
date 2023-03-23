@@ -22,7 +22,7 @@ Jerry: olá novamente
 Jerry: Encontrou minhas chaves?
 -> Player: Sim! Encontrei. <<if $FoundKeys == true>>
     Jerry: Meu Deus, Obrigadão
-    <<removeItem NPC Item>>
+    <<removeItem NPC Image(Clone)>>
     <<finishQuest NPC 1>>
 -> Player: Infelizmente não
     Jerry: Que droga
