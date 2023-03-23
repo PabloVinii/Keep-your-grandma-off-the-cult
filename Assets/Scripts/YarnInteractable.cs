@@ -6,7 +6,7 @@ using Yarn.Unity;
 public class YarnInteractable : MonoBehaviour
 {
     private DialogueRunner dialogueRunner;
-
+    public ItemListUI itemListUI;
     [SerializeField] private string conversationStartNode;
     [SerializeField] private Transform icon;
 
@@ -88,5 +88,10 @@ public class YarnInteractable : MonoBehaviour
             Debug.Log("nao spawno");
         }
 
+    }
+
+    [YarnCommand("removeItem")]
+    public void RemoveItemFromUI(GameObject obj) {
+        itemListUI.RemoveItem(obj);
     }
 }

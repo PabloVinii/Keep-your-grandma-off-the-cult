@@ -7,9 +7,7 @@ tags:
     Cara eu perdi minhas chaves de casa
     Será que você pode me ajudar a achar?
     -> Player: Claro, verei oque consigo fazer
-        Obrigado!
         <<quest NPC 1>>
-        Jerry: a propósito, meu nome é Jerry, muito prazer
     -> Player: To meio ocupado, sabe?
         Ah, sei, ok.
 <<else>>
@@ -24,7 +22,7 @@ Jerry: olá novamente
 Jerry: Encontrou minhas chaves?
 -> Player: Sim! Encontrei. <<if $FoundKeys == true>>
     Jerry: Meu Deus, Obrigadão
-    Jerry: Aceite isso como uma recompensa
+    <<removeItem NPC Item>>
     <<finishQuest NPC 1>>
 -> Player: Infelizmente não
     Jerry: Que droga

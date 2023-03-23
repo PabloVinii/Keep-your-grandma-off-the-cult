@@ -2228,6 +2228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questList: []
+  itemListUI: {fileID: 2126609614}
+  item: {fileID: 8475015839534136272, guid: b0624940e8de6b24fae8eedd3d10c818, type: 3}
   flashLightActive: 0
   flashLight: {fileID: 440520738}
 --- !u!1 &1767841199
@@ -2929,6 +2931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 3176304906211571879, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
+      propertyPath: itemListUI
+      value: 
+      objectReference: {fileID: 2126609614}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
 --- !u!1001 &4406095935036850076

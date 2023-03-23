@@ -24,4 +24,20 @@ public class ItemListUI : MonoBehaviour
         // Define a sprite do objeto Image como a sprite do item coletado
         newItemImage.GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
     }
+
+    public void RemoveItem(GameObject item)
+    {
+        // Remove o item da lista de itens coletados
+        collectedItems.Remove(item);
+
+        // Procura todos os objetos filho do painel e remove o objeto de imagem correspondente
+        foreach(Transform child in itemListPanel.transform)
+        {
+            if(child.GetComponent<Image>().sprite == item.GetComponent<SpriteRenderer>().sprite)
+            {
+                Destroy(child.gameObject);
+                break;
+            }
+        }
+    }
 }
