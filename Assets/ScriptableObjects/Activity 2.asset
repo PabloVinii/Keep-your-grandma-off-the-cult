@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb3b132b059279418e9f7ffb9b8cfe1, type: 3}
   m_Name: Activity 2
   m_EditorClassIdentifier: 
-  hour: 0
-  minute: 0
-  text: 
+  hour: 11
+  minute: 15
+  actions:
+  - {fileID: 11400000, guid: 668eec9125817f448ae08f692be6c720, type: 2}

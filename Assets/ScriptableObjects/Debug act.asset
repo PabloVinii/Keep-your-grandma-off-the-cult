@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792795ffd189ff0458279a10f1dd3d06, type: 3}
   m_Name: Debug act
   m_EditorClassIdentifier: 
-  text: 
+  text: Teste

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d7f53e70e3d9a4e96852a83ffeeb97, type: 3}
   m_Name: Sunday
   m_EditorClassIdentifier: 
-  day: 0
-  itinerary: {fileID: 0}
+  day: 1
+  itinerary: {fileID: 11400000, guid: 67c1e3a67c8393144897218d709a1f45, type: 2}
