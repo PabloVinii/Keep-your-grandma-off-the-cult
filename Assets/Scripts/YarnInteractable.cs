@@ -6,7 +6,7 @@ using Yarn.Unity;
 public class YarnInteractable : MonoBehaviour
 {
     private DialogueRunner dialogueRunner;
-    public ItemListUI itemListUI;
+    
 
     [SerializeField] private string conversationStartNode;
     [SerializeField] private Transform icon;
@@ -20,7 +20,6 @@ public class YarnInteractable : MonoBehaviour
     {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
-        itemListUI = FindAnyObjectByType<ItemListUI>();
     }
 
     private void Update()
@@ -94,6 +93,7 @@ public class YarnInteractable : MonoBehaviour
 
     [YarnCommand("removeItem")]
     public void RemoveItemFromUI(GameObject obj) {
-        itemListUI.RemoveItem(obj);
+        Debug.Log("remover item");
+        //itemListUI.RemoveItem(obj);
     }
 }

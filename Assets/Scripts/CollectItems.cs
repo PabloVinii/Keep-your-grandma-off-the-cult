@@ -10,12 +10,12 @@ public class CollectItems : MonoBehaviour
     private DialogueRunner dialogueRunner;
     public string varYarn = "$";
 
-    // Referência para o script ItemListUI
-    public ItemListUI itemListUI;
+    // Referência para o script Inventory
+    public PlayerInventory inventory;
 
     private void Start() {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
-        itemListUI = FindAnyObjectByType<ItemListUI>();
+        inventory = FindObjectOfType<PlayerInventory>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -24,18 +24,18 @@ public class CollectItems : MonoBehaviour
             Quest relatedQuest = other.GetComponent<PlayerActions>().GetQuestById(questId);
             if (relatedQuest != null && relatedQuest.isActive)
             {               
-                // Coleta o item
-                relatedQuest.goal.ItemCollected();
-
-                // Adiciona o item à lista de itens coletados e exibe sua sprite na UI
-                itemListUI.AddItem(gameObject);
+                // Coleta o item e adiciona ao inventário do jogador
+                inventory.AddItem(gameObject.GetComponent<ItemObject>().item);
 
                 // Verifica se a meta da quest foi alcançada
+                relatedQuest.goal.ItemCollected();
                 if (relatedQuest.goal.isReached())
                 {
                     dialogueRunner.VariableStorage.SetValue(varYarn, true);
                 }
 
+                // Remove o item do mundo
+                Destroy(gameObject);
             }
         }
     }

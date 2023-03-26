@@ -2080,6 +2080,7 @@ GameObject:
   - component: {fileID: 1750414563}
   - component: {fileID: 1750414560}
   - component: {fileID: 1750414564}
+  - component: {fileID: 1750414565}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2230,6 +2231,20 @@ MonoBehaviour:
   questList: []
   flashLightActive: 0
   flashLight: {fileID: 440520738}
+--- !u!114 &1750414565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750414558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46bbdceec656b445aa10ed9cc7f1fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItems: []
+  maxSlots: 7
 --- !u!1 &1767841199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2852,7 @@ GameObject:
   - component: {fileID: 2126609613}
   - component: {fileID: 2126609612}
   - component: {fileID: 2126609615}
-  - component: {fileID: 2126609614}
+  - component: {fileID: 2126609616}
   m_Layer: 5
   m_Name: ItemList
   m_TagString: Untagged
@@ -2903,21 +2918,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126609609}
   m_CullTransparentMesh: 1
---- !u!114 &2126609614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126609609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d4652b9701600418f38ba9d823abff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemListPanel: {fileID: 2126609609}
-  itemImagePrefab: {fileID: 5146868392919501499, guid: afd5feac0157e6747818c5028f1f931c, type: 3}
-  collectedItems: []
 --- !u!114 &2126609615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2944,6 +2944,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2126609616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126609609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13180a3e5bfd89c42a5ce1e1bb8052c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 2126609609}
+  itemSlotPrefab: {fileID: 5146868392919501499, guid: afd5feac0157e6747818c5028f1f931c, type: 3}
+  itemSlots: []
 --- !u!1001 &3176304905310733113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3026,7 +3041,7 @@ PrefabInstance:
     - target: {fileID: 3176304906211571879, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
       propertyPath: itemListUI
       value: 
-      objectReference: {fileID: 2126609614}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
 --- !u!1001 &4406095935036850076
