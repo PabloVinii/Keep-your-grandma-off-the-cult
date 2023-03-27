@@ -361,5 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6b04e82c033f418898a12dafa7b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSprite: {fileID: 8879008254236848505}
   stack: {fileID: 1360757283188306651}
   itemName: {fileID: 7205404537823140551}

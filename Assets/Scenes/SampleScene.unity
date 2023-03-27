@@ -342,7 +342,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 384262193}
   itemSlotPrefab: {fileID: 8901901836197008423, guid: 58078328e94720a4ca8af2524b6152bb, type: 3}
   itemSlots: []
-  inventory: {fileID: 0}
+  inventory: {fileID: 1750414565}
 --- !u!1 &440520738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
+  inventoryUi: {fileID: 384262199}
 --- !u!1 &1767841199
 GameObject:
   m_ObjectHideFlags: 0

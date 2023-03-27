@@ -12,7 +12,6 @@ public class ItemObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PickUpItem();
-           inventoryUi.UpdateUI();
         }
     }
 

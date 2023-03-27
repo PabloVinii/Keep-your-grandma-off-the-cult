@@ -6,9 +6,10 @@ public class InventorySystem : MonoBehaviour
 {
     public Dictionary<ItemData, InventoryItem> itemDictionary;
     public List<InventoryItem> inventory;
+    private InventoryUi inventoryUi;
 
     private void Awake() {
-        
+        inventoryUi = FindObjectOfType<InventoryUi>();
         inventory = new List<InventoryItem>();
         itemDictionary = new Dictionary<ItemData, InventoryItem>();
     }
@@ -27,11 +28,13 @@ public class InventorySystem : MonoBehaviour
         if (itemDictionary.TryGetValue(referenceData, out InventoryItem value))
         {
             value.AddToStack();
+            inventoryUi.UpdateUI();
         }
         else
         {
             InventoryItem newItem = new InventoryItem(referenceData);
             inventory.Add(newItem);
+            inventoryUi.UpdateUI();
             itemDictionary.Add(referenceData, newItem);
         }
     }
@@ -40,7 +43,8 @@ public class InventorySystem : MonoBehaviour
     {
         if (itemDictionary.TryGetValue(referenceData, out InventoryItem value))
         {
-            value.RemoveFromStack();
+            inventoryUi.UpdateUI();
+            value.RemoveFromStack(); 
 
             if (value.stackSize == 0)
             {

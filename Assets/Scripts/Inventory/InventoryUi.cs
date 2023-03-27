@@ -37,12 +37,12 @@ public class InventoryUi : MonoBehaviour
             itemSlots.Add(newItemSlot);
 
             // Adiciona os itens do inventário aos slots de itens da UI
-            newItemSlot.GetComponentInChildren<Image>().sprite = item.data.icon;
-            newItemSlot.GetComponentInChildren<TextMeshProUGUI>().text = item.data.displayName;
+            newItemSlot.GetComponentInChildren<InventorySlot>().itemSprite.sprite = item.data.icon;
+            newItemSlot.GetComponentInChildren<InventorySlot>().itemName.text = item.data.displayName;
             // Adiciona o número de itens empilhados ao texto do slot de item da UI
             if (item.stackSize > 1)
             {
-                newItemSlot.GetComponentInChildren<teste>().stack.text += " x" + item.stackSize.ToString();
+                newItemSlot.GetComponentInChildren<InventorySlot>().stack.text += " x" + item.stackSize.ToString();
             }
         }
     }
