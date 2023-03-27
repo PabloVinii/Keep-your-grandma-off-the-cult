@@ -6,11 +6,13 @@ public class ItemObject : MonoBehaviour
 {
     public ItemData referenceItem;
     public InventorySystem inventory;
+    public InventoryUi inventoryUi;
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
             PickUpItem();
+           inventoryUi.UpdateUI();
         }
     }
 
