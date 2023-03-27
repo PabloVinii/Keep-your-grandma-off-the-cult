@@ -5,9 +5,12 @@ using UnityEngine;
 public class ItemObject : MonoBehaviour
 {
     public ItemData referenceItem;
-    public InventorySystem inventory;
-    public InventoryUi inventoryUi;
+    private InventorySystem inventory;
     
+    private void Start() {
+        inventory = FindObjectOfType<InventorySystem>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
