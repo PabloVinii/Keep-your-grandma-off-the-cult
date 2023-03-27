@@ -5,7 +5,6 @@ using Yarn.Unity;
 
 public class ItemObject : MonoBehaviour
 {
-    public int questId;
     public ItemData referenceItem;
     private InventorySystem inventory;
     public GameObject player;
@@ -26,7 +25,7 @@ public class ItemObject : MonoBehaviour
 
     public void PickUpItem()
     {     
-        Quest relatedQuest = player.GetComponent<PlayerActions>().GetQuestById(questId);
+        Quest relatedQuest = player.GetComponent<PlayerActions>().GetQuestById(referenceItem.questId);
         if (relatedQuest != null && relatedQuest.isActive)
         {
             // Coleta o item
