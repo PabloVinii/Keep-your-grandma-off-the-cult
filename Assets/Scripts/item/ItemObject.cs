@@ -6,13 +6,15 @@ using Yarn.Unity;
 public class ItemObject : MonoBehaviour
 {
     public ItemData referenceItem;
-    private InventorySystem inventory;
-    public GameObject player;
+    private GameObject player;
     public string varYarn = "$";
-    public DialogueRunner dialogueRunner;
+
+    private InventorySystem inventory;
+    private DialogueRunner dialogueRunner;
 
     private void Start() {
         inventory = FindObjectOfType<InventorySystem>();
+        dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
