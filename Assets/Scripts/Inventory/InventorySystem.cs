@@ -39,18 +39,19 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    public void Remove(ItemData referenceData)
+    public void Remove(ItemData referenceData, int amount=1)
     {
         if (itemDictionary.TryGetValue(referenceData, out InventoryItem value))
         {
-            inventoryUi.UpdateUI();
-            value.RemoveFromStack(); 
+            value.RemoveFromStack(amount);
 
             if (value.stackSize == 0)
             {
                 inventory.Remove(value);
                 itemDictionary.Remove(referenceData);
             }
+
+            inventoryUi.UpdateUI();
         }
     }
 }

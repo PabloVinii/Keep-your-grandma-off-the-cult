@@ -9,6 +9,8 @@ public class QuestGiver : MonoBehaviour
 
     public List<Quest> quests = new List<Quest>();
 
+    public InventorySystem playerInventory;
+
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
     }
@@ -47,10 +49,24 @@ public class QuestGiver : MonoBehaviour
     }
 
     [YarnCommand("finishQuest")]
-    public void FinishQuest(int questId) {
+    public void FinishQuest(int questId, int amount=1) {
         Quest questToFinish = player.GetQuestById(questId);
         if (questToFinish != null && questToFinish.isActive)
+        {   
+            List<InventoryItem> itemsToRemove = new List<InventoryItem>();
+        foreach (InventoryItem item in playerInventory.inventory)
         {
+            if (item.data.questId == questId)
+            {
+                itemsToRemove.Add(item);
+            }
+        }
+
+        foreach (InventoryItem item in itemsToRemove)
+        {
+            playerInventory.Remove(item.data, amount);
+        }
+            
             questToFinish.Complete();
             Debug.Log("Quest " + questId + " finalizada");
         }

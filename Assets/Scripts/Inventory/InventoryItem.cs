@@ -20,9 +20,9 @@ public class InventoryItem
         stackSize++;
     }
 
-    public void RemoveFromStack()
+    public void RemoveFromStack(int amount)
     {
-        stackSize--;
+        stackSize-= amount;
     }
 
 }
