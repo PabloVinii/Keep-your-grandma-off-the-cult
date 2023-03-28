@@ -25,7 +25,7 @@ Jerry: Encontrou minhas chaves?
 -> Player: Sim! Encontrei. <<if $FoundKeys == true>>
     Jerry: Meu Deus, Obrigadão
     Jerry: Aceite isso como uma recompensa
-    <<finishQuest NPC 1>>
+    <<finishQuest NPC 1 2>>
 -> Player: Infelizmente não
     Jerry: Que droga
 ===
