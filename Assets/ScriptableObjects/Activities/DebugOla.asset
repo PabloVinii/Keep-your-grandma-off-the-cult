@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 792795ffd189ff0458279a10f1dd3d06, type: 3}
-  m_Name: Debug act 2
+  m_Script: {fileID: 11500000, guid: cf699a97ea077d34cbefdda72b1425b5, type: 3}
+  m_Name: DebugOla
   m_EditorClassIdentifier: 
-  text: Teste 1
+  message: "Ol\xE1"

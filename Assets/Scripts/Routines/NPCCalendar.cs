@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof (NPCStateMachine))]
 public class NPCCalendar : MonoBehaviour
 {
     private Itinerary activeItinerary;
-    [SerializeField] private Dictionary<DayEnum, Itinerary> itineraries = new Dictionary<DayEnum, Itinerary>();
+    private Dictionary<DayEnum, Itinerary> itineraries = new Dictionary<DayEnum, Itinerary>();
     [SerializeField] private DayNightScript dayNightScript;
 
     [Header("Itineraries")]
