@@ -18,7 +18,7 @@ tags:
 ---
 -> Player: Sim! Encontrei. <<if $quest1 == true>>
     Aceite isso como uma recompensa
-    <<finishQuest NPC 1 2>>
+    <<finishQuest NPC 1>>
     <<startNode NPC NpcDialogue02>>
 -> Player: não
 ===

@@ -67,37 +67,27 @@ public class QuestGiver : MonoBehaviour
     }
 
     [YarnCommand("finishQuest")]
-    public void FinishQuest(int questId, int amount=0) 
+    public void FinishQuest(int questId) 
     {
         Quest questToFinish = player.GetQuestById(questId);
 
         if (questToFinish != null && questToFinish.isActive)
         {   
-            //lista de itens a serem removidos do inventario
-            List<InventoryItem> itemsToRemove = new List<InventoryItem>();
-            foreach (InventoryItem item in playerInventory.inventory)
+            if (questToFinish.goal.goalType == GoalType.Talk)
             {
-                if (item.data.questId == questId)
-                {
-                    itemsToRemove.Add(item);
-                }
-            }
-
-            foreach (InventoryItem item in itemsToRemove)
-            {
-                playerInventory.Remove(item.data, amount);
+                QuestGatheringType(questId, questToFinish.goal.requiredAmount);
             }
                 questToFinish.Complete();
                 Debug.Log("Quest " + questId + " finalizada");
-            }
-            else if (questToFinish != null && !questToFinish.isActive)
-            {
-                Debug.Log("Quest " + questId + " já foi finalizada");
-            }
-            else
-            {
-                Debug.Log("Quest " + questId + " não encontrada");
-            }
+        }
+        else if (questToFinish != null && !questToFinish.isActive)
+        {
+            Debug.Log("Quest " + questId + " já foi finalizada");
+        }
+        else
+        {
+            Debug.Log("Quest " + questId + " não encontrada");
+        }
     }
 
     private void ValidateQuestIds()
@@ -114,6 +104,24 @@ public class QuestGiver : MonoBehaviour
             {
                 idList.Add(quest.questId);
             }
+        }
+    }
+
+    private void QuestGatheringType(int questId, int amount=0)
+    {
+        //lista de itens a serem removidos do inventario
+        List<InventoryItem> itemsToRemove = new List<InventoryItem>();
+        foreach (InventoryItem item in playerInventory.inventory)
+        {
+            if (item.data.questId == questId)
+            {
+                itemsToRemove.Add(item);
+            }
+        }
+
+        foreach (InventoryItem item in itemsToRemove)
+        {
+            playerInventory.Remove(item.data, amount);
         }
     }
     }
