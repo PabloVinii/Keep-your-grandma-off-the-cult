@@ -217,7 +217,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 82072125}
-  - component: {fileID: 82072127}
   - component: {fileID: 82072126}
   m_Layer: 0
   m_Name: RoutineTest
@@ -254,26 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualDay: 1
---- !u!114 &82072127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82072122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb06090a57434af4bb4df98257a153b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dayNightScript: {fileID: 1946065901}
-  sundayItinerary: {fileID: 11400000, guid: 67c1e3a67c8393144897218d709a1f45, type: 2}
-  mondayItinerary: {fileID: 11400000, guid: 4200c37e0f136594dae79f9d9d418447, type: 2}
-  tuesdaytinerary: {fileID: 11400000, guid: 4200c37e0f136594dae79f9d9d418447, type: 2}
-  wednesdayItinerary: {fileID: 11400000, guid: 67c1e3a67c8393144897218d709a1f45, type: 2}
-  fridayItinerary: {fileID: 11400000, guid: 4200c37e0f136594dae79f9d9d418447, type: 2}
-  thursdayItinerary: {fileID: 11400000, guid: 67c1e3a67c8393144897218d709a1f45, type: 2}
-  saturdayItinerary: {fileID: 11400000, guid: 4200c37e0f136594dae79f9d9d418447, type: 2}
 --- !u!1 &139155265
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,10 +965,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1146067317}
   - component: {fileID: 1146067316}
-  - component: {fileID: 1146067315}
   - component: {fileID: 1146067318}
+  - component: {fileID: 1146067319}
+  - component: {fileID: 1146067315}
   m_Layer: 0
-  m_Name: Square
+  m_Name: npc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,6 +1077,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1146067319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146067314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb06090a57434af4bb4df98257a153b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayNightScript: {fileID: 1946065901}
+  sundayItinerary: {fileID: 11400000, guid: ff64f093338bc4440872b84e7ecbf203, type: 2}
+  mondayItinerary: {fileID: 11400000, guid: ff64f093338bc4440872b84e7ecbf203, type: 2}
+  tuesdaytinerary: {fileID: 11400000, guid: ff64f093338bc4440872b84e7ecbf203, type: 2}
+  wednesdayItinerary: {fileID: 11400000, guid: ff64f093338bc4440872b84e7ecbf203, type: 2}
+  fridayItinerary: {fileID: 11400000, guid: ff64f093338bc4440872b84e7ecbf203, type: 2}
+  thursdayItinerary: {fileID: 11400000, guid: ff64f093338bc4440872b84e7ecbf203, type: 2}
+  saturdayItinerary: {fileID: 11400000, guid: ff64f093338bc4440872b84e7ecbf203, type: 2}
 --- !u!1 &1319554817
 GameObject:
   m_ObjectHideFlags: 0

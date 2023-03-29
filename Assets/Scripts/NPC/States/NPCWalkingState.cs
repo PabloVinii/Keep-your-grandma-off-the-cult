@@ -11,13 +11,13 @@ public class NPCWalkingState : INPCState
 
     public void Update(NPCStateMachine stateMachine)
     {
-        if (Vector2.Distance(stateMachine.transform.position, stateMachine.Target.position) < .5f)
+        if (Vector2.Distance(stateMachine.transform.position, stateMachine.Target) < .5f)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
         }
 
 
-        Vector2 direction =  stateMachine.Target.position - stateMachine.transform.position;
+        Vector2 direction =  stateMachine.Target - (Vector2)stateMachine.transform.position;
 
         stateMachine.Rig.velocity += direction.normalized * stateMachine.WalkSpeed * Time.deltaTime;
 

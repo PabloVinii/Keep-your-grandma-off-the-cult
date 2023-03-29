@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Activity : ScriptableObject
 {
-    public abstract void DoAction();
+    public abstract void DoAction(NPCManager manager);
  }

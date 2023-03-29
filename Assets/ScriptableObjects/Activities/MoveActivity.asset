@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf699a97ea077d34cbefdda72b1425b5, type: 3}
-  m_Name: DebugTeste
+  m_Script: {fileID: 11500000, guid: 10d300575dfac0c4492fe075d454376b, type: 3}
+  m_Name: MoveActivity
   m_EditorClassIdentifier: 
-  message: Teste
+  target: {fileID: 0}

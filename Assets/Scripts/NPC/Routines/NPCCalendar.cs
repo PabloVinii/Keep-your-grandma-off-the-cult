@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof (NPCStateMachine))]
+[RequireComponent(typeof (NPCManager))]
 public class NPCCalendar : MonoBehaviour
 {
+    private NPCManager npcManager;
     private Itinerary activeItinerary;
     private Dictionary<DayEnum, Itinerary> itineraries = new Dictionary<DayEnum, Itinerary>();
     [SerializeField] private DayNightScript dayNightScript;
@@ -19,6 +20,7 @@ public class NPCCalendar : MonoBehaviour
     [SerializeField] private Itinerary saturdayItinerary;
     private void Awake()
     {
+        npcManager = GetComponent<NPCManager>();
         SetupItineraries();
         Calendar.onDayChanged += ChangeActiveItinerary;
     }
@@ -27,7 +29,7 @@ public class NPCCalendar : MonoBehaviour
 
     private void Update()
     {
-        activeItinerary.RunActivities(dayNightScript);
+        activeItinerary.RunActivities(dayNightScript, npcManager);
     }
 
     private void ChangeActiveItinerary(DayEnum dayEnum)

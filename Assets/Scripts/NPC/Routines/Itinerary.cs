@@ -7,7 +7,7 @@ public class Itinerary : ScriptableObject
     [SerializeField] private List<TimeActivity> openActivities = new List<TimeActivity>();
     private HashSet<TimeActivity> closedActivities = new HashSet<TimeActivity>();
 
-    public void RunActivities(DayNightScript dayNightScript)
+    public void RunActivities(DayNightScript dayNightScript, NPCManager npcManager)
     {
 
         if (openActivities.Count <= 0) return;
@@ -19,7 +19,7 @@ public class Itinerary : ScriptableObject
 
             if (CompareTime(timeActivity.Hour, timeActivity.Minute, dayNightScript.hours, dayNightScript.mins))
             {
-                timeActivity.Activity.DoAction();
+                timeActivity.Activity.DoAction(npcManager);
                 closedActivities.Add(timeActivity);
             }
         }

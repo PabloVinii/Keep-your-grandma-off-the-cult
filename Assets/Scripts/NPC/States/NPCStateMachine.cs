@@ -6,7 +6,7 @@ using UnityEngine;
 public class NPCStateMachine : MonoBehaviour
 {
     private INPCState actualState;
-    [SerializeField] private Transform target;
+    [SerializeField] private Vector2 target;
     [SerializeField] private float walkSpeed;
     private Rigidbody2D rig;
 
@@ -16,7 +16,7 @@ public class NPCStateMachine : MonoBehaviour
     public INPCState IdleState { get => idleState; }
     public INPCState WalkingState { get => walkingState; }
 #endregion
-    public Transform Target { get => target; }
+    public Vector2 Target { get => target; set => target = value; }
     public float WalkSpeed { get => walkSpeed; }
     public Rigidbody2D Rig {get => rig;}
 

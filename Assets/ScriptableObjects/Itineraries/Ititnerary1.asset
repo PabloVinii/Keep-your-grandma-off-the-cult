@@ -16,3 +16,6 @@ MonoBehaviour:
   - hour: 15
     minute: 0
     activity: {fileID: 11400000, guid: fcc6ef1f409efb24987c8f13a849cf68, type: 2}
+  - hour: 18
+    minute: 15
+    activity: {fileID: 11400000, guid: fcc6ef1f409efb24987c8f13a849cf68, type: 2}

@@ -11,7 +11,7 @@ public class NPCIdleState : INPCState
 
     public void Update(NPCStateMachine stateMachine)
     {
-         if (Vector2.Distance(stateMachine.transform.position, stateMachine.Target.position) > .5f)
+         if (Vector2.Distance(stateMachine.transform.position, stateMachine.Target) > .5f)
         {
             stateMachine.ChangeState(stateMachine.WalkingState);
         }

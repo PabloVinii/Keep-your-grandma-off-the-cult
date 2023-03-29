@@ -5,9 +5,9 @@ using UnityEngine;
 public class DebugActivity : Activity
 {
     [SerializeField] private string message;
-    public override void DoAction()
+    public override void DoAction(NPCManager nPCManager)
     {
-       Debug.Log("debugActivity: " + message);
+       Debug.Log(nPCManager.name + ": " + message);
     }
 
 #region Equals and hashCode
