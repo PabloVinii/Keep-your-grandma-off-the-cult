@@ -1,16 +1,12 @@
 ﻿title: NpcDialogue
 tags:
 ---
-
-<<if !visited("NpcDialogue")>>
-    <<set $quest1 to false>>
-    Hey, pegue 2 itens para mim
-    -> Player: Claro
-        <<quest NPC 1>>
-    -> Player: Não
-<<else>>
-    <<jump NpcDialogue01>>
-<<endif>>
+<<set $quest1 to false>>
+Hey, pegue 2 itens para mim
+-> Player: Claro
+    <<quest NPC 1>>
+    <<startNode NPC NpcDialogue01>>
+-> Player: Não
 ===
 
 title: NpcDialogue01

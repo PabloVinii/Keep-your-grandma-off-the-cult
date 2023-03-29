@@ -305,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176304906211571874, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
       propertyPath: quests.Array.data[1].goal.requiredAmount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3176304906211571875, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
       propertyPath: m_Name
