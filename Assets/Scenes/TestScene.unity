@@ -305,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176304906211571874, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
       propertyPath: quests.Array.data[1].goal.requiredAmount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3176304906211571875, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
       propertyPath: m_Name
@@ -1936,7 +1936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176304906211571875, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
       propertyPath: m_Name
-      value: NPC (1)
+      value: Cleber
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176304906211571879, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}
+      propertyPath: conversationStartNode
+      value: teste2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e94434088fe0244993ce5ebc8d0e0a, type: 3}

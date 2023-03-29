@@ -27,8 +27,15 @@ title: NpcDialogue02
 tags:
 ---
 opa
-<<if $quest1 == true>>
-    agora que me ajudou, fale com outro npc
+<<if $quest1 == true && !visited("NpcDialogue02")>>
+    agora que me ajudou, descubra o nome daquele cara ali
     <<quest NPC 2>>
+    <<set $falou to false>>
+<<else>>
+    <<if $falou == true>>
+        deu certo
+        termine a quest
+        <<finishQuest NPC 2>>
+    <<endif>>
 <<endif>>
 ===

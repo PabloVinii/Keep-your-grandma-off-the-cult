@@ -8,9 +8,11 @@ public class QuestGiver : MonoBehaviour
     public PlayerActions player;
     public List<Quest> quests = new List<Quest>();
     private InventorySystem playerInventory;
+    private DialogueRunner dialogueRunner;
 
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
+        dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
         playerInventory = FindObjectOfType<InventorySystem>();
     }
 
@@ -48,8 +50,24 @@ public class QuestGiver : MonoBehaviour
         }
     }
 
+    [YarnCommand("talk")]
+    public void TalkedTo(int questId, string name) 
+    {
+        Quest quest = player.GetQuestById(questId);
+        if (quest != null && quest.isActive && quest.goal.goalType == GoalType.Talk)
+        {
+            quest.goal.currentAmount++;
+
+            // Verifica se a meta da quest foi alcançada
+            if (quest.goal.isReached())
+            {
+                dialogueRunner.VariableStorage.SetValue(name, true);
+            }
+        }
+    }
+
     [YarnCommand("finishQuest")]
-    public void FinishQuest(int questId, int amount=1) 
+    public void FinishQuest(int questId, int amount=0) 
     {
         Quest questToFinish = player.GetQuestById(questId);
 
