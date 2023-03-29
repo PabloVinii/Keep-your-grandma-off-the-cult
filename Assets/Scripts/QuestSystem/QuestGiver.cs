@@ -6,14 +6,14 @@ using Yarn.Unity;
 public class QuestGiver : MonoBehaviour
 {
     public PlayerActions player;
-
     public List<Quest> quests = new List<Quest>();
-
-    public InventorySystem playerInventory;
+    private InventorySystem playerInventory;
 
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
+        playerInventory = FindObjectOfType<InventorySystem>();
     }
+
     private void Start()
     {
         ValidateQuestIds();
@@ -55,6 +55,7 @@ public class QuestGiver : MonoBehaviour
 
         if (questToFinish != null && questToFinish.isActive)
         {   
+            //lista de itens a serem removidos do inventario
             List<InventoryItem> itemsToRemove = new List<InventoryItem>();
             foreach (InventoryItem item in playerInventory.inventory)
             {
