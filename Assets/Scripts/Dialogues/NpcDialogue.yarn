@@ -2,7 +2,7 @@
 tags:
 ---
 <<set $quest1 to false>>
-Hey, pegue 2 itens para mim
+Hey, pega 2 itens para mim
 -> Player: Claro
     <<quest NPC 1>>
     <<startNode NPC NpcDialogue01>>
@@ -12,8 +12,9 @@ Hey, pegue 2 itens para mim
 title: NpcDialogue01
 tags:
 ---
+acho?
 -> Player: Sim! Encontrei. <<if $quest1 == true>>
-    Aceite isso como uma recompensa
+    boa
     <<finishQuest NPC 1>>
     <<startNode NPC NpcDialogue02>>
 -> Player: não
