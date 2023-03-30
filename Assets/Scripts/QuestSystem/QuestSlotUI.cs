@@ -6,28 +6,16 @@ using TMPro;
 
 public class QuestSlotUI : MonoBehaviour
 {
-    public TextMeshProUGUI title;
-    public TextMeshProUGUI description;
-    public TextMeshProUGUI reward;
+    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private TextMeshProUGUI reward;
 
     private Quest quest;
 
-    public Quest Quest
+    public void SetQuest(Quest newQuest)
     {
-        get { return quest; }
-        set
-        {
-            quest = value;
-            if (quest != null)
-            {
-                title.text = quest.title;
-                reward.text = quest.reward.ToString();
-            }
-            else
-            {
-                title.text = "";
-            }
-        }
+        quest = newQuest;
+        title.text = quest != null ? quest.title : "";
+        reward.text = quest != null ? quest.reward.ToString() : "";
     }
-
 }
