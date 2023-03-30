@@ -6,14 +6,16 @@ using Yarn.Unity;
 public class QuestGiver : MonoBehaviour
 {
     public PlayerActions player;
-
     public List<Quest> quests = new List<Quest>();
-
-    public InventorySystem playerInventory;
+    private InventorySystem playerInventory;
+    private DialogueRunner dialogueRunner;
 
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
+        dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        playerInventory = FindObjectOfType<InventorySystem>();
     }
+
     private void Start()
     {
         ValidateQuestIds();
@@ -48,37 +50,44 @@ public class QuestGiver : MonoBehaviour
         }
     }
 
+    [YarnCommand("talk")]
+    public void TalkedTo(int questId, string name) 
+    {
+        Quest quest = player.GetQuestById(questId);
+        if (quest != null && quest.isActive && quest.goal.goalType == GoalType.Talk)
+        {
+            quest.goal.currentAmount++;
+
+            // Verifica se a meta da quest foi alcançada
+            if (quest.goal.isReached())
+            {
+                dialogueRunner.VariableStorage.SetValue(name, true);
+            }
+        }
+    }
+
     [YarnCommand("finishQuest")]
-    public void FinishQuest(int questId, int amount=1) 
+    public void FinishQuest(int questId) 
     {
         Quest questToFinish = player.GetQuestById(questId);
 
         if (questToFinish != null && questToFinish.isActive)
         {   
-            List<InventoryItem> itemsToRemove = new List<InventoryItem>();
-            foreach (InventoryItem item in playerInventory.inventory)
+            if (questToFinish.goal.goalType == GoalType.Gathering)
             {
-                if (item.data.questId == questId)
-                {
-                    itemsToRemove.Add(item);
-                }
-            }
-
-            foreach (InventoryItem item in itemsToRemove)
-            {
-                playerInventory.Remove(item.data, amount);
+                QuestGatheringType(questId, questToFinish.goal.requiredAmount);
             }
                 questToFinish.Complete();
                 Debug.Log("Quest " + questId + " finalizada");
-            }
-            else if (questToFinish != null && !questToFinish.isActive)
-            {
-                Debug.Log("Quest " + questId + " já foi finalizada");
-            }
-            else
-            {
-                Debug.Log("Quest " + questId + " não encontrada");
-            }
+        }
+        else if (questToFinish != null && !questToFinish.isActive)
+        {
+            Debug.Log("Quest " + questId + " já foi finalizada");
+        }
+        else
+        {
+            Debug.Log("Quest " + questId + " não encontrada");
+        }
     }
 
     private void ValidateQuestIds()
@@ -95,6 +104,24 @@ public class QuestGiver : MonoBehaviour
             {
                 idList.Add(quest.questId);
             }
+        }
+    }
+
+    private void QuestGatheringType(int questId, int amount=0)
+    {
+        //lista de itens a serem removidos do inventario
+        List<InventoryItem> itemsToRemove = new List<InventoryItem>();
+        foreach (InventoryItem item in playerInventory.inventory)
+        {
+            if (item.data.questId == questId)
+            {
+                itemsToRemove.Add(item);
+            }
+        }
+
+        foreach (InventoryItem item in itemsToRemove)
+        {
+            playerInventory.Remove(item.data, amount);
         }
     }
     }

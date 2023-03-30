@@ -78,6 +78,11 @@ public class YarnInteractable : MonoBehaviour
         Debug.Log($"{name} is leaping!");
     }
 
+    [YarnCommand("startNode")]
+    public void StartNode(string startNode) {
+       conversationStartNode = startNode;
+    }
+
     [YarnCommand("spawn")]
     public void Spawn(GameObject obj, bool spawn = false) {
         // spawn item

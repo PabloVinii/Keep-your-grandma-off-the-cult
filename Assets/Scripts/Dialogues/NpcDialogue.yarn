@@ -1,31 +1,38 @@
 ﻿title: NpcDialogue
 tags:
 ---
-<<if !visited("NpcDialogue")>>
-    <<set $FoundKeys to false>>
-    Hey, olá meu jovem
-    Cara eu perdi minhas chaves de casa
-    Será que você pode me ajudar a achar?
-    -> Player: Claro, verei oque consigo fazer
-        Obrigado!
-        <<quest NPC 1>>
-        Jerry: a propósito, meu nome é Jerry, muito prazer
-    -> Player: To meio ocupado, sabe?
-        Ah, sei, ok.
-<<else>>
-    <<jump NpcDialogue01>>
-<<endif>>
+<<set $quest1 to false>>
+Hey, pega 2 itens para mim
+-> Player: Claro
+    <<quest NPC 1>>
+    <<startNode NPC NpcDialogue01>>
+-> Player: Não
 ===
 
 title: NpcDialogue01
 tags:
 ---
-Jerry: olá novamente
-Jerry: Encontrou minhas chaves?
--> Player: Sim! Encontrei. <<if $FoundKeys == true>>
-    Jerry: Meu Deus, Obrigadão
-    Jerry: Aceite isso como uma recompensa
-    <<finishQuest NPC 1 2>>
--> Player: Infelizmente não
-    Jerry: Que droga
+acho?
+-> Player: Sim! Encontrei. <<if $quest1 == true>>
+    boa
+    <<finishQuest NPC 1>>
+    <<startNode NPC NpcDialogue02>>
+-> Player: não
+===
+
+title: NpcDialogue02
+tags:
+---
+opa
+<<if $quest1 == true && !visited("NpcDialogue02")>>
+    agora que me ajudou, descubra o nome daquele cara ali
+    <<quest NPC 2>>
+    <<set $falou to false>>
+<<else>>
+    <<if $falou == true>>
+        deu certo
+        termine a quest
+        <<finishQuest NPC 2>>
+    <<endif>>
+<<endif>>
 ===
