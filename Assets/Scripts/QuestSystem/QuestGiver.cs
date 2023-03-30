@@ -73,7 +73,7 @@ public class QuestGiver : MonoBehaviour
 
         if (questToFinish != null && questToFinish.isActive)
         {   
-            if (questToFinish.goal.goalType == GoalType.Talk)
+            if (questToFinish.goal.goalType == GoalType.Gathering)
             {
                 QuestGatheringType(questId, questToFinish.goal.requiredAmount);
             }
