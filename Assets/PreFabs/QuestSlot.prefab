@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2248046009510513526}
   - component: {fileID: 2248046009510513524}
   - component: {fileID: 2248046009510513525}
+  - component: {fileID: -1866183841325674336}
   m_Layer: 5
   m_Name: QuestSlot
   m_TagString: Untagged
@@ -79,6 +80,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-1866183841325674336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248046009510513527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098b8a4fe032d4b40b96128e6bc82711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 7410905017620111796}
+  description: {fileID: 7802736589101600925}
+  reward: {fileID: 2000358052029147225}
 --- !u!1 &3232954041219552182
 GameObject:
   m_ObjectHideFlags: 0

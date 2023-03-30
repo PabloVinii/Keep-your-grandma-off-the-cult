@@ -333,7 +333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &384262194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 43, y: -37}
-  m_SizeDelta: {x: 40, y: 150.988}
+  m_SizeDelta: {x: 0, y: 150.988}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &384262195
 MonoBehaviour:
@@ -585,14 +585,13 @@ GameObject:
   - component: {fileID: 443188269}
   - component: {fileID: 443188271}
   - component: {fileID: 443188270}
-  - component: {fileID: 443188272}
   m_Layer: 5
   m_Name: QuestPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &443188269
 RectTransform:
   m_ObjectHideFlags: 0
@@ -652,21 +651,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443188268}
   m_CullTransparentMesh: 1
---- !u!114 &443188272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443188268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364bda452acaa534189065d7e2cf387e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1750414564}
-  questListItemPrefab: {fileID: 2248046009510513527, guid: 0b44c4c9e32f7cf4198b34ce8d36c6de, type: 3}
-  content: {fileID: 920864850}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1785,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d9e55728c87724db984a9fd35203be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questList: []
+  questList:
+  - questId: 10
+    isActive: 1
+    title: test
+    description: teste
+    reward: 20
+    goal:
+      goalType: 0
+      requiredAmount: 2
+      currentAmount: 0
+  - questId: 20
+    isActive: 1
+    title: quest 2
+    description: tome tome tome
+    reward: 40
+    goal:
+      goalType: 0
+      requiredAmount: 2
+      currentAmount: 0
   questUIPanel: {fileID: 443188268}
   isQuestUIActive: 0
   flashLightActive: 0
@@ -1915,6 +1917,7 @@ GameObject:
   - component: {fileID: 1807150068}
   - component: {fileID: 1807150069}
   - component: {fileID: 1807150070}
+  - component: {fileID: 1807150071}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1940,7 +1943,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1450, y: 10}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1807150069
 MonoBehaviour:
@@ -1980,6 +1983,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 1
+--- !u!114 &1807150071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807150067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364bda452acaa534189065d7e2cf387e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questPanel: {fileID: 1807150067}
+  questSlotPrefab: {fileID: 2248046009510513527, guid: 0b44c4c9e32f7cf4198b34ce8d36c6de, type: 3}
+  questSlots: []
+  player: {fileID: 1750414564}
 --- !u!1001 &1854331643
 PrefabInstance:
   m_ObjectHideFlags: 0
