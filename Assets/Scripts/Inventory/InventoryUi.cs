@@ -42,23 +42,4 @@ public class InventoryUi : MonoBehaviour
             inventorySlot.ItemCount = item.stackSize;
         }
     }
-
-    // Cria um novo slot de item no inventário
-    public void AddItemSlot()
-    {
-        GameObject newItemSlot = Instantiate(itemSlotPrefab, inventoryPanel.transform);
-        itemSlots.Add(newItemSlot);
-        numSlots++;
-    }
-
-    // Remove o último slot de item no inventário
-    public void RemoveItemSlot()
-    {
-        if (itemSlots.Count > 0)
-        {
-            Destroy(itemSlots[itemSlots.Count - 1]);
-            itemSlots.RemoveAt(itemSlots.Count - 1);
-            numSlots--;
-        }
-    }
 }

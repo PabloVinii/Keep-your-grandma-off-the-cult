@@ -40,7 +40,6 @@ public class QuestGiver : MonoBehaviour
         {
             quest.isActive = true;
             player.questList.Add(quest);
-            questUi.UpdateQuestUI();
             Debug.Log("Quest " + questId + " aceita");
         }
         else if (quest != null && quest.isActive)

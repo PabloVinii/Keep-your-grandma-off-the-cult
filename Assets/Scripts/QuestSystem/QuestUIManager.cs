@@ -36,15 +36,5 @@ public class QuestUIManager : MonoBehaviour
         }
     }
 
-    public void AddQuest(Quest quest)
-    {
-        player.questList.Add(quest);
-        UpdateQuestUI();
-    }
-
-    public void RemoveQuest(Quest quest)
-    {
-        player.questList.Remove(quest);
-        UpdateQuestUI();
-    }
 }
+

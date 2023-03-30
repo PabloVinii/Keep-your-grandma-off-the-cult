@@ -9,6 +9,7 @@ public class PlayerActions : MonoBehaviour
     public bool isQuestUIActive = false; // booleano para controlar a visibilidade da tela de quests
     public bool flashLightActive = false;
     public GameObject flashLight;
+    [SerializeField] private QuestUIManager questUi;
 
     // Update is called once per frame
     void Update()
@@ -54,11 +55,13 @@ public class PlayerActions : MonoBehaviour
         {
             if (isQuestUIActive == false)
             {
-                questUIPanel.SetActive(true);            
+                questUIPanel.SetActive(true);    
+                questUi.UpdateQuestUI();        
                 isQuestUIActive = true;
             }
             else
             {
+                questUi.UpdateQuestUI(); 
                 questUIPanel.SetActive(false);
                 isQuestUIActive = false;
             }
