@@ -10,7 +10,7 @@ public class QuestSlotUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private TextMeshProUGUI reward;
 
-    private Quest quest;
+    public Quest quest;
 
     public void SetQuest(Quest newQuest)
     {

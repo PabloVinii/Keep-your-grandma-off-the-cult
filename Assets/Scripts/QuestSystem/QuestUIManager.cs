@@ -7,8 +7,9 @@ public class QuestUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject questPanel;
     [SerializeField] private GameObject questSlotPrefab;
-    private Dictionary<int, QuestSlotUI> questSlots = new Dictionary<int, QuestSlotUI>();
     [SerializeField] private PlayerActions player;
+    private Dictionary<int, QuestSlotUI> questSlots = new Dictionary<int, QuestSlotUI>();
+    private bool showOnlyActiveQuests = false; // variável para indicar se exibir apenas missões ativas
 
     private void Start()
     {
@@ -20,7 +21,8 @@ public class QuestUIManager : MonoBehaviour
     {
         foreach (var slot in questSlots.Values)
         {
-            slot.gameObject.SetActive(false);
+            bool shouldShowSlot = !showOnlyActiveQuests || slot.quest != null && slot.quest.isActive; // verifica se deve exibir o slot de missão
+            slot.gameObject.SetActive(shouldShowSlot);
         }
 
         foreach (var quest in player.questList)
@@ -32,9 +34,16 @@ public class QuestUIManager : MonoBehaviour
             }
 
             questSlot.SetQuest(quest);
-            questSlot.gameObject.SetActive(true);
+            bool shouldShowSlot = !showOnlyActiveQuests || quest.isActive; // verifica se deve exibir o slot de missão
+            questSlot.gameObject.SetActive(shouldShowSlot);
         }
     }
 
+    public void OnShowOnlyActiveQuestsClicked()
+    {
+        showOnlyActiveQuests = !showOnlyActiveQuests; // inverte o valor da variável showOnlyActiveQuests
+        UpdateQuestUI();
+    }
 }
+
 

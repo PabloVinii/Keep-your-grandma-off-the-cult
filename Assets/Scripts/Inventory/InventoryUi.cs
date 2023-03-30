@@ -10,7 +10,7 @@ public class InventoryUi : MonoBehaviour
     public List<GameObject> itemSlots = new List<GameObject>(); // Lista de slots de itens no inventário
 
     [SerializeField] private InventorySystem inventory; // Referência para o inventário do jogador
-    private int numSlots = 0; // Número de slots criados
+    //private int numSlots = 0; // Número de slots criados
 
     private void Start()
     {
