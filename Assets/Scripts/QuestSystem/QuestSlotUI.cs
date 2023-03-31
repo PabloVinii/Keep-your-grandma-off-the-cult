@@ -16,6 +16,7 @@ public class QuestSlotUI : MonoBehaviour
     {
         quest = newQuest;
         title.text = quest != null ? quest.title : "";
+        description.text = quest != null ? quest.description : "";
         reward.text = quest != null ? quest.reward.ToString() : "";
     }
 }

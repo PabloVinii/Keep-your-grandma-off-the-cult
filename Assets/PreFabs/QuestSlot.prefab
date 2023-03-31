@@ -95,6 +95,16 @@ MonoBehaviour:
   title: {fileID: 7410905017620111796}
   description: {fileID: 7802736589101600925}
   reward: {fileID: 2000358052029147225}
+  quest:
+    questId: 0
+    isActive: 0
+    title: 
+    description: 
+    reward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
 --- !u!1 &3232954041219552182
 GameObject:
   m_ObjectHideFlags: 0
