@@ -13,7 +13,7 @@ public class NPCIdleState : INPCState
     {
          if (Vector2.Distance(stateMachine.transform.position, stateMachine.Target) > .5f)
         {
-            stateMachine.ChangeState(stateMachine.WalkingState);
+            //stateMachine.ChangeState(stateMachine.WalkingState);
         }
     }
     public void Exit(NPCStateMachine stateMachine)

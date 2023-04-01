@@ -26,7 +26,7 @@ public class NPCStateMachine : MonoBehaviour
 
     void Start()
     {
-        ChangeState(walkingState);
+        ChangeState(idleState);
     }
 
     void Update()
