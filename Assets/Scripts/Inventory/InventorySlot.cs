@@ -9,6 +9,7 @@ public class InventorySlot : MonoBehaviour
     public Image itemSprite;
     public TextMeshProUGUI stackCount;
     public TextMeshProUGUI itemName;
+    public int itemId;
 
     private ItemData itemData;
 
@@ -22,6 +23,7 @@ public class InventorySlot : MonoBehaviour
             {
                 itemSprite.sprite = itemData.icon;
                 itemName.text = itemData.displayName;
+                itemId = itemData.id;
             }
             else
             {

@@ -9,10 +9,12 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public string tipDescription;
     private float timeToWait = 0.5f;
     public InventorySystem inventory;
+    public int tipId;
 
     private void Awake() {
         inventory = FindObjectOfType<InventorySystem>();
     }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         StopAllCoroutines();
@@ -29,7 +31,8 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         yield return new WaitForSeconds(timeToWait);
 
-        if (inventory.itemDictionary.TryGetValue(GetItemDataById(1), out InventoryItem inventoryItem))
+        tipId = GetComponent<InventorySlot>().itemId;
+        if (inventory.itemDictionary.TryGetValue(GetItemDataById(tipId), out InventoryItem inventoryItem))
         {
             HoverTipManager.onMouseHover(inventoryItem.data, Input.mousePosition);
         }
