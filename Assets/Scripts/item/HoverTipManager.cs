@@ -9,7 +9,7 @@ public class HoverTipManager : MonoBehaviour
     public TextMeshProUGUI tipDescription;
     public RectTransform tipWindow;
     
-    public static Action <string, string, Vector2> onMouseHover;
+    public static Action <ItemData,Vector2> onMouseHover;
     public static Action onMouseLoseFocus;
 
     // Start is called before the first frame update
@@ -30,11 +30,10 @@ public class HoverTipManager : MonoBehaviour
         onMouseLoseFocus -= HideTip;
     }
 
-    private void ShowTip(string tip, string tip2, Vector2 mousePos)
+    private void ShowTip(ItemData item, Vector2 mousePos)
     {
-        tipTitle.text = tip;
-        tipDescription.text = tip2;
-        //tipWindow.sizeDelta = new Vector2(tipText.preferredWidth > 200 ? 200 : tipText.preferredWidth, tipText.preferredHeight);
+        tipTitle.text = item.displayName;
+        tipDescription.text = item.description;
         tipWindow.gameObject.SetActive(true);
         tipWindow.transform.position = new Vector2(mousePos.x + tipWindow.sizeDelta.x * 2, mousePos.y);
     }

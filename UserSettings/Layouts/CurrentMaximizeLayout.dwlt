@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 5095
+  controlID: 6362
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 5096
+  controlID: 6363
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 5022
+  controlID: 6303
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -637,9 +637,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fec2ffff
-      m_LastClickedID: -15618
-      m_ExpandedIDs: 28c3ffffe6c8ffffe6d0ffff38f1ffff0efbffffc07000000c7100002a71000086e00000d2e00000f0e00000
+      m_SelectedIDs: 86710000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 28c3ffffe6c8ffffe6d0ffff38f1ffff0efbffffc07000000c7100002a71000086e00000f0e00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -731,21 +731,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PreFabs
+    - Assets/ScriptableObject/Item
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/PreFabs
+  - Assets/ScriptableObject/Item
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Projetos\Keep-your-grandma-off-the-cult
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3a750000
-    m_LastClickedID: 30010
+    m_SelectedIDs: 40750000
+    m_LastClickedID: 30016
     m_ExpandedIDs: 000000000a7500000c7500000e75000010750000127500001475000016750000187500001a7500001c7500001e75000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -799,9 +799,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: fec2ffff
-    m_LastClickedInstanceID: -15618
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 86710000
+    m_LastClickedInstanceID: 29062
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 106a0000f46c00000c6d000000000000ca6c0000aedf000094c7000060720000be720000a4720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
