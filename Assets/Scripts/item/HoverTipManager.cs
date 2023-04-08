@@ -5,10 +5,11 @@ using UnityEngine;
 using TMPro;
 public class HoverTipManager : MonoBehaviour
 {
-    public TextMeshProUGUI tipText;
+    public TextMeshProUGUI tipTitle;
+    public TextMeshProUGUI tipDescription;
     public RectTransform tipWindow;
     
-    public static Action <string, Vector2> onMouseHover;
+    public static Action <string, string, Vector2> onMouseHover;
     public static Action onMouseLoseFocus;
 
     // Start is called before the first frame update
@@ -29,17 +30,19 @@ public class HoverTipManager : MonoBehaviour
         onMouseLoseFocus -= HideTip;
     }
 
-    private void ShowTip(string tip, Vector2 mousePos)
+    private void ShowTip(string tip, string tip2, Vector2 mousePos)
     {
-        tipText.text = tip;
-        tipWindow.sizeDelta = new Vector2(tipText.preferredWidth > 200 ? 200 : tipText.preferredWidth, tipText.preferredHeight);
+        tipTitle.text = tip;
+        tipDescription.text = tip2;
+        //tipWindow.sizeDelta = new Vector2(tipText.preferredWidth > 200 ? 200 : tipText.preferredWidth, tipText.preferredHeight);
         tipWindow.gameObject.SetActive(true);
         tipWindow.transform.position = new Vector2(mousePos.x + tipWindow.sizeDelta.x * 2, mousePos.y);
     }
 
     private void HideTip()
     {
-        tipText.text = default;
+        tipTitle.text = default;
+        tipDescription.text = default;
         tipWindow.gameObject.SetActive(false);
     }
 
