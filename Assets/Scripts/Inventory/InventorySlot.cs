@@ -29,6 +29,7 @@ public class InventorySlot : MonoBehaviour
             {
                 itemSprite.sprite = null;
                 itemName.text = "";
+                itemId = 0;
             }
         }
     }
