@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d504001f2c539b34a97719915acafd8b, type: 3}
-  m_Name: Piece 3_4
+  m_Name: Piece2-3
   m_EditorClassIdentifier: 
-  namePiece: 3and4
-  sprite: {fileID: 21300000, guid: b5937f1cb38eb8043997ae42bc1a3c69, type: 3}
-  topValue: 3
-  bottomValue: 4
+  namePiece: Piece2-3
+  sprite: {fileID: 21300000, guid: 894501b6c67058d4ebd3299ccd58001f, type: 3}
+  topValue: 2
+  bottomValue: 3
