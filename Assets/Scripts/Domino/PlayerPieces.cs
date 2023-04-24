@@ -1,39 +1,33 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPieces : MonoBehaviour
 {
-    public List<DominoPiece> pieces = new List<DominoPiece>();
-    public int maxPieces = 7;
+    [SerializeField] private List<DominoPiece> playerPieces = new List<DominoPiece>();
 
     public void AddPiece(DominoPiece piece)
     {
-        if (pieces.Count < maxPieces)
-        {
-            pieces.Add(piece);
-            piece.transform.parent = transform;
-            piece.gameObject.SetActive(false);
-        }
+        playerPieces.Add(piece);
     }
 
     public void RemovePiece(DominoPiece piece)
     {
-        if (pieces.Contains(piece))
-        {
-            pieces.Remove(piece);
-            piece.transform.parent = null;
-        }
+        playerPieces.Remove(piece);
     }
 
     public void ResetPieces()
     {
-        foreach (var piece in pieces)
+        foreach (DominoPiece piece in playerPieces)
         {
-            piece.gameObject.SetActive(false);
-            piece.transform.parent = null;
-            Destroy(piece.gameObject);
+            piece.transform.SetParent(transform);
+            piece.transform.localPosition = Vector3.zero;
+            piece.gameObject.SetActive(true);
         }
-        pieces.Clear();
+        playerPieces.Clear();
+    }
+
+    public void UpdatePlayerPieces(List<DominoPiece> pieces)
+    {
+        playerPieces = pieces;
     }
 }
