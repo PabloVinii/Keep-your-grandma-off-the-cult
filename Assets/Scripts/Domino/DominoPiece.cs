@@ -5,10 +5,15 @@ using UnityEngine;
 public class DominoPiece : MonoBehaviour
 {
     public DominoPieceData dominoData;
+    public int topValue;
+    public int bottomValue;
 
-    void Awake()
+    void Update()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = dominoData.sprite;
+        topValue = dominoData.topValue;
+        bottomValue = dominoData.bottomValue;
+
     }
 
 }
