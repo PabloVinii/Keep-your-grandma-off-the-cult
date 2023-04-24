@@ -7,10 +7,12 @@ public class DominoBoard : MonoBehaviour
     public Transform playerHand;
     public Transform enemyHand;
     public Transform boardLocal;
+    public DominoUI dominoUi;
 
     [SerializeField] private List<DominoPiece> boardPieces = new List<DominoPiece>();
     [SerializeField] private List<DominoPiece> playerPieces = new List<DominoPiece>();
     [SerializeField] private List<DominoPiece> computerPieces = new List<DominoPiece>();
+
     public List<DominoPieceData> pieceDataList = new List<DominoPieceData>();
 
     void Start()
@@ -42,6 +44,7 @@ public class DominoBoard : MonoBehaviour
             newPiece.dominoData = data;
             playerPieces.Add(newPiece);
             pieceDataList.Remove(data);
+            dominoUi.UpdateUI(playerPieces);
         }
 
         // Give the next 7 pieces to the computer

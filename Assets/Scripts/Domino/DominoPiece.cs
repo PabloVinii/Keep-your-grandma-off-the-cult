@@ -7,10 +7,12 @@ public class DominoPiece : MonoBehaviour
     public DominoPieceData dominoData;
     public int topValue;
     public int bottomValue;
+    public Sprite sprite;
 
-    void Update()
+    public void Start()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = dominoData.sprite;
+        sprite = dominoData.sprite;
         topValue = dominoData.topValue;
         bottomValue = dominoData.bottomValue;
 

@@ -221,6 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bce2ffc810e374fb1ac76f3484cd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  piecePrefab: {fileID: 6268615490015724232, guid: 886aee731f21d0847baa6ebe6b8d4dbb, type: 3}
+  piecesParent: {fileID: 197646573}
+  pieceSlots: []
 --- !u!114 &197646575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +255,7 @@ MonoBehaviour:
     m_Right: 20
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 3
+  m_ChildAlignment: 4
   m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -431,6 +434,7 @@ MonoBehaviour:
   playerHand: {fileID: 48286453}
   enemyHand: {fileID: 417178589}
   boardLocal: {fileID: 1546031674}
+  dominoUi: {fileID: 197646574}
   boardPieces: []
   playerPieces: []
   computerPieces: []
