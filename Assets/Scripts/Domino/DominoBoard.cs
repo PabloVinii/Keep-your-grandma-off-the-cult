@@ -8,7 +8,7 @@ public class DominoBoard : MonoBehaviour
     public List<DominoPieceData> playerPieces;
     public List<DominoPieceData> computerPieces;
     public List<DominoPieceData> boardPieces;
-
+    public PlayerPieces player;
     public DominoPiece leftEndPiece;
     public DominoPiece rightEndPiece;
 
@@ -63,8 +63,7 @@ public class DominoBoard : MonoBehaviour
                 DominoPieceData playablePiece = null;
                 foreach (DominoPieceData piece in playerPieces)
                 {
-                    if (piece.topValue == leftEndPiece.dominoData.bottomValue || piece.bottomValue == leftEndPiece.dominoData.bottomValue
-                        || piece.topValue == rightEndPiece.dominoData.topValue || piece.bottomValue == rightEndPiece.dominoData.topValue)
+                    if (IsPlayablePiece(piece, true) || IsPlayablePiece(piece, false))
                     {
                         playablePiece = piece;
                         break;
@@ -73,60 +72,58 @@ public class DominoBoard : MonoBehaviour
 
                 if (playablePiece != null)
                 {
-                    // Remove the played piece from player's hand
-                    playerPieces.Remove(playablePiece);
-                    // Add the played piece to the board
-                    boardPieces.Add(playablePiece);
-                    // Update the left and right ends of the board
-                    if (playablePiece.topValue == leftEndPiece.dominoData.bottomValue)
-                    {
-                        DominoPiece temp = leftEndPiece;
-                        leftEndPiece = Instantiate(Resources.Load<DominoPiece>("Prefabs/DominoPiece"), leftEndPiece.transform.parent);
-                        leftEndPiece.transform.position = temp.transform.position;
-                        leftEndPiece.transform.rotation = Quaternion.Euler(0, 0, 180);
-                        leftEndPiece.dominoData = playablePiece;
-                    }
-                    else if (playablePiece.bottomValue == leftEndPiece.dominoData.bottomValue)
-                    {
-                        DominoPiece temp = leftEndPiece;
-                        leftEndPiece = Instantiate(Resources.Load<DominoPiece>("Prefabs/DominoPiece"), leftEndPiece.transform.parent);
-                        leftEndPiece.transform.position = temp.transform.position;
-                        leftEndPiece.transform.rotation = Quaternion.Euler(0, 0, 0);
-                        leftEndPiece.dominoData = playablePiece;
-                    }
-                    else if (playablePiece.topValue == rightEndPiece.dominoData.topValue)
-                    {DominoPiece temp = rightEndPiece;
-                    rightEndPiece = Instantiate(Resources.Load<DominoPiece>("Prefabs/DominoPiece"), rightEndPiece.transform.parent);
-                    rightEndPiece.transform.position = temp.transform.position;
-                    rightEndPiece.transform.rotation = Quaternion.Euler(0, 0, 180);
-                    rightEndPiece.dominoData = playablePiece;
+                    AddPieceToBoard(playablePiece, true);
+                    isPlayerTurn = false;
                 }
-                else if (playablePiece.bottomValue == rightEndPiece.dominoData.topValue)
+                else
                 {
-                    DominoPiece temp = rightEndPiece;
-                    rightEndPiece = Instantiate(Resources.Load<DominoPiece>("Prefabs/DominoPiece"), rightEndPiece.transform.parent);
-                    rightEndPiece.transform.position = temp.transform.position;
-                    rightEndPiece.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    rightEndPiece.dominoData = playablePiece;
+                    // no playable pieces, draw a new piece from the boneyard
+                    player.DrawPiece();
                 }
-
-                // Switch turns
-                isPlayerTurn = !isPlayerTurn;
             }
             else
             {
-                // If player has no playable pieces, skip turn
-                isPlayerTurn = false;
+                // Computer's turn
+                // code for computer's turn here
+                isPlayerTurn = true;
             }
+        }
+    }
+
+    
+    public bool IsPlayablePiece(DominoPieceData piece, bool isLeftEnd)
+    {
+        return piece.topValue == leftEndPiece.dominoData.bottomValue 
+            || piece.bottomValue == leftEndPiece.dominoData.bottomValue
+            || piece.topValue == rightEndPiece.dominoData.topValue 
+            || piece.bottomValue == rightEndPiece.dominoData.topValue;
+    }
+
+    public void AddPieceToBoard(DominoPieceData piece, bool addToLeftEnd)
+    {
+        if (addToLeftEnd)
+        {
+            // adiciona peça ao lado esquerdo
+            playerPieces.Remove(piece);
+            boardPieces.Add(piece);
+            DominoPiece temp = leftEndPiece;
+            leftEndPiece = Instantiate(Resources.Load<DominoPiece>("Prefabs/DominoPiece"), leftEndPiece.transform.parent);
+            leftEndPiece.transform.position = temp.transform.position;
+            leftEndPiece.transform.rotation = Quaternion.Euler(0, 0, 180);
+            leftEndPiece.dominoData = piece;
         }
         else
         {
-            // Computer's turn
-            // Implement computer's turn logic here
-
-            // Switch turns
-            isPlayerTurn = !isPlayerTurn;
+            // adiciona peça ao lado direito
+            playerPieces.Remove(piece);
+            boardPieces.Add(piece);
+            DominoPiece temp = rightEndPiece;
+            rightEndPiece = Instantiate(Resources.Load<DominoPiece>("Prefabs/DominoPiece"), rightEndPiece.transform.parent);
+            rightEndPiece.transform.position = temp.transform.position;
+            rightEndPiece.transform.rotation = Quaternion.Euler(0, 0, 0);
+            rightEndPiece.dominoData = piece;
         }
     }
-}
+
+    
 }
