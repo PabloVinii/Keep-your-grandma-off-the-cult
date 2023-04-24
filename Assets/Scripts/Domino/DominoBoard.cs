@@ -9,9 +9,13 @@ public class DominoBoard : MonoBehaviour
     public List<DominoPieceData> computerPieces;
     public List<DominoPieceData> boardPieces;
     public PlayerPieces player;
+    public DominoUI dominoUi;
     public DominoPiece leftEndPiece;
     public DominoPiece rightEndPiece;
 
+    private void Start() {
+        dominoUi.UpdateUI(playerPieces);
+    }
     public void StartGame()
     {
         ShuffleAllDominoPieces();
@@ -73,12 +77,14 @@ public class DominoBoard : MonoBehaviour
                 if (playablePiece != null)
                 {
                     AddPieceToBoard(playablePiece, true);
+                    dominoUi.UpdateUI(playerPieces);
                     isPlayerTurn = false;
                 }
                 else
                 {
                     // no playable pieces, draw a new piece from the boneyard
                     player.DrawPiece();
+                    dominoUi.UpdateUI(playerPieces);
                 }
             }
             else

@@ -5,6 +5,7 @@ public class PlayerPieces : MonoBehaviour
 {
     public List<DominoPieceData> playerPieces = new List<DominoPieceData>();
     public DominoBoard dominoBoard;
+    public DominoUI dominoUi;
     
     private void Start()
     {
@@ -52,7 +53,8 @@ public class PlayerPieces : MonoBehaviour
         dominoBoard.AddPieceToBoard(piece, isLeftEnd);
 
         // Atualiza a UI do jogador e da mesa
-        //gameManager.UpdatePlayerUI(this);
+        
+        dominoUi.UpdateUI(playerPieces);
         //gameManager.UpdateBoardUI();
     }
 
