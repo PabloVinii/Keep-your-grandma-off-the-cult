@@ -348,9 +348,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 36e73ad516efe1442a7d5b9ffc6df604, type: 2}
   - {fileID: 11400000, guid: f3ba9bb322a18e4448226769ee606649, type: 2}
   - {fileID: 11400000, guid: 6be99d6f15551b541905fc305083715b, type: 2}
-  playerPieces:
-  - {fileID: 11400000, guid: caa783e9b9ce73e45ab7f41bc70325d0, type: 2}
-  - {fileID: 11400000, guid: ddba9a3f5caf51c48afd0d9b8f64b1ab, type: 2}
+  playerPieces: []
   computerPieces: []
   boardPieces: []
   player: {fileID: 1814885635}
