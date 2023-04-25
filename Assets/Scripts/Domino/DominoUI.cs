@@ -21,9 +21,10 @@ public class DominoUI : MonoBehaviour
         foreach (DominoPiece piece in playerPieces)
         {
             GameObject newPiece = Instantiate(piecePrefab, transform);
-            newPiece.GetComponent<Image>().sprite = piece.sprite;
             pieceSlots.Add(newPiece);
 
+            DominoPieceUI dominoPiece = newPiece.GetComponentInChildren<DominoPieceUI>();
+            dominoPiece.DominoPiece = piece.dominoData;
         }
     }
 }

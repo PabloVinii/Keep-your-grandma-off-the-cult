@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bce2ffc810e374fb1ac76f3484cd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piecePrefab: {fileID: 6268615490015724232, guid: 886aee731f21d0847baa6ebe6b8d4dbb, type: 3}
+  piecePrefab: {fileID: 7293262450830752701, guid: 886aee731f21d0847baa6ebe6b8d4dbb, type: 3}
   piecesParent: {fileID: 197646573}
   pieceSlots: []
 --- !u!114 &197646575
