@@ -20,9 +20,6 @@ public class DominoBoard : MonoBehaviour
     {
         ShufflePieces();
         DistributePieces();
-        DominoPiece firstPiece = Instantiate(dominoPiecePrefab, boardLocal).GetComponent<DominoPiece>();
-        boardPieces.Add(firstPiece);
-        lastPiecePlayed = firstPiece;
     }
 
     void ShufflePieces()
