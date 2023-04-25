@@ -18,4 +18,17 @@ public class DominoPiece : MonoBehaviour
 
     }
 
+    public DominoPiece Invert()
+    {
+        int temp = topValue;
+        topValue = bottomValue;
+        bottomValue = temp;
+        return this;
+    }
+
+    public bool CanBePlayed(DominoPiece lastPiecePlayed)
+    {
+        return (lastPiecePlayed.topValue == bottomValue || lastPiecePlayed.bottomValue == topValue);
+    }
+
 }

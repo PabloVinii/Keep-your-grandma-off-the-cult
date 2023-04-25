@@ -1,13 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using UnityEngine.EventSystems;
 
-public class DominoPieceUI : MonoBehaviour
+public class DominoPieceUI : MonoBehaviour, IPointerClickHandler
 {
     public Image dominoSprite;
     private DominoPieceData dominoPiece;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Clicked on piece: " + dominoPiece.ToString());
+    }
 
     public DominoPieceData DominoPiece
     {
