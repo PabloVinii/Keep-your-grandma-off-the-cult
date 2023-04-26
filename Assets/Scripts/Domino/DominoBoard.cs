@@ -66,5 +66,53 @@ public class DominoBoard : MonoBehaviour
             boardPieces.Add(newPiece);
         }
     }
+
+
+    public void StartGame()
+    {
+        // Find the highest piece in the player's hand
+        DominoPiece highestPlayerPiece = playerPieces[0];
+        foreach (DominoPiece piece in playerPieces)
+        {
+            if (piece.topValue + piece.bottomValue > highestPlayerPiece.topValue + highestPlayerPiece.bottomValue)
+            {
+                highestPlayerPiece = piece;
+            }
+        }
+
+        // Find the highest piece in the computer's hand
+        DominoPiece highestComputerPiece = computerPieces[0];
+        foreach (DominoPiece piece in computerPieces)
+        {
+            if (piece.topValue + piece.bottomValue > highestComputerPiece.topValue + highestComputerPiece.bottomValue)
+            {
+                highestComputerPiece = piece;
+            }
+        }
+
+        // Check who has the highest piece
+        if (highestPlayerPiece.topValue + highestPlayerPiece.bottomValue >= highestComputerPiece.topValue + highestComputerPiece.bottomValue)
+        {
+            Debug.Log("Player starts the game!" + highestPlayerPiece.dominoData.namePiece);
+            PlayerTurn();
+        }
+        else
+        {
+            Debug.Log("Computer starts the game! " + " " + highestComputerPiece.dominoData.namePiece);
+            ComputerTurn();
+        }
+    }
+
+    void PlayerTurn()
+    {
+        // TODO: implement player's turn
+    }
+
+    void ComputerTurn()
+    {
+        // TODO: implement computer's turn
+    }
+
+
 }
 
