@@ -15,20 +15,5 @@ public class DominoPiece : MonoBehaviour
         sprite = dominoData.sprite;
         topValue = dominoData.topValue;
         bottomValue = dominoData.bottomValue;
-
     }
-
-    public DominoPiece Invert()
-    {
-        int temp = topValue;
-        topValue = bottomValue;
-        bottomValue = temp;
-        return this;
-    }
-
-    public bool CanBePlayed(DominoPiece lastPiecePlayed)
-    {
-        return (lastPiecePlayed.topValue == bottomValue || lastPiecePlayed.bottomValue == topValue);
-    }
-
 }

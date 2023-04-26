@@ -7,7 +7,6 @@ public class DominoUI : MonoBehaviour
 {
     public GameObject piecePrefab;
     public Transform piecesParent;
-    public List<GameObject> pieceSlots = new List<GameObject>(); // Lista de slots de itens no inventário
     
     public void UpdateUI(List<DominoPiece> playerPieces)
     {
@@ -21,7 +20,6 @@ public class DominoUI : MonoBehaviour
         foreach (DominoPiece piece in playerPieces)
         {
             GameObject newPiece = Instantiate(piecePrefab, transform);
-            pieceSlots.Add(newPiece);
 
             DominoPieceUI dominoPiece = newPiece.GetComponentInChildren<DominoPieceUI>();
             dominoPiece.DominoPiece = piece.dominoData;
