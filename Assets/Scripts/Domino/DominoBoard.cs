@@ -103,15 +103,92 @@ public class DominoBoard : MonoBehaviour
         }
     }
 
+    private List<DominoPiece> GetPlayablePieces()
+    {
+        List<DominoPiece> playablePieces = new List<DominoPiece>();
+
+        // Check if any player's piece can be played
+        int leftValue = boardPieces[0].bottomValue;
+        foreach (DominoPiece piece in computerPieces)
+        {
+            if (piece.topValue == leftValue || piece.bottomValue == leftValue)
+            {
+                playablePieces.Add(piece);
+            }
+        }
+
+        // Check if any player's piece can be played on the right side of the board
+        int rightValue = boardPieces[boardPieces.Count - 1].topValue;
+        foreach (DominoPiece piece in computerPieces)
+        {
+            if (piece.topValue == rightValue || piece.bottomValue == rightValue)
+            {
+                playablePieces.Add(piece);
+            }
+        }
+
+        return playablePieces;
+    }
+
+
     void PlayerTurn()
     {
         // TODO: implement player's turn
     }
 
-    void ComputerTurn()
+    private void ComputerTurn()
+{
+    List<DominoPiece> playablePieces = GetPlayablePieces();
+
+    // Check if the computer has a playable piece
+    if (playablePieces.Count > 0)
     {
-        // TODO: implement computer's turn
+        // Computer has playable piece, select a random one
+        DominoPiece pieceToPlay = playablePieces[UnityEngine.Random.Range(0, playablePieces.Count)];
+
+        // Remove the piece from the computer's hand and place it on the board
+        computerPieces.Remove(pieceToPlay);
+        if (boardPieces.Count == 0)
+        {
+            // First piece, add to the center of the board
+            boardPieces.Add(pieceToPlay);
+        }
+        else
+        {
+            // Check which side to add the piece to
+            int leftValue = boardPieces[0].bottomValue;
+            int rightValue = boardPieces[boardPieces.Count - 1].topValue;
+            if (pieceToPlay.topValue == leftValue || pieceToPlay.bottomValue == leftValue)
+            {
+                // Add to the left side of the board
+                boardPieces.Insert(0, pieceToPlay);
+            }
+            else
+            {
+                // Add to the right side of the board
+                boardPieces.Add(pieceToPlay);
+            }
+        }
     }
+    else
+    {
+        // Computer has no playable piece, draw a new piece from the boneyard
+        if (boardPieces.Count > 0)
+        {
+            DominoPiece newPiece = boardPieces[0];
+            boardPieces.RemoveAt(0);
+            computerPieces.Add(newPiece);
+        }
+    }
+
+    // Check if the computer won the game
+    // if (computerPieces.Count == 0)
+    // {
+    //     gameOver = true;
+    //     winner = "Computer";
+    // }
+}
+
 
 
 }

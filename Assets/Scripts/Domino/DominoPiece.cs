@@ -16,4 +16,11 @@ public class DominoPiece : MonoBehaviour
         topValue = dominoData.topValue;
         bottomValue = dominoData.bottomValue;
     }
+
+    public void Flip() 
+    {
+        int temp = topValue;
+        topValue = bottomValue;
+        bottomValue = temp;
+    }
 }
