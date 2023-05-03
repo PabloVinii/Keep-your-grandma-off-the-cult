@@ -9,11 +9,13 @@ public class QuestGiver : MonoBehaviour
     public List<Quest> quests = new List<Quest>();
     private InventorySystem playerInventory;
     private DialogueRunner dialogueRunner;
+    [SerializeField] private QuestUIManager questUi;
 
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
         playerInventory = FindObjectOfType<InventorySystem>();
+        questUi = FindObjectOfType<QuestUIManager>();
     }
 
     private void Start()

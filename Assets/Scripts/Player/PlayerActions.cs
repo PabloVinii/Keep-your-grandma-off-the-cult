@@ -5,15 +5,18 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     public List<Quest> questList = new List<Quest>();
-    
+    public GameObject questUIPanel;
+    public bool isQuestUIActive = false; // booleano para controlar a visibilidade da tela de quests
     public bool flashLightActive = false;
     public GameObject flashLight;
+    [SerializeField] private QuestUIManager questUi;
 
     // Update is called once per frame
     void Update()
     {
         
         ToggleFlashLight();
+        ToggleQuestUI();
     }
 
     public Quest GetQuestById(int id)
@@ -45,4 +48,24 @@ public class PlayerActions : MonoBehaviour
             }
         }
     }
+
+    void ToggleQuestUI()
+    {
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            if (isQuestUIActive == false)
+            {
+                questUIPanel.SetActive(true);    
+                questUi.UpdateQuestUI();        
+                isQuestUIActive = true;
+            }
+            else
+            {
+                questUi.UpdateQuestUI(); 
+                questUIPanel.SetActive(false);
+                isQuestUIActive = false;
+            }
+        }
+    }
+
 }
