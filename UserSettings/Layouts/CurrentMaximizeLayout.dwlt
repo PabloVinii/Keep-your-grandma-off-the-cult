@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17405
+  controlID: 5992
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 17406
+  controlID: 5993
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -449,9 +449,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 175.46593, y: 343.2401, z: 0}
+    m_Target: {x: 1.1439325, y: -3.0744855, z: -9.994794}
     speed: 2
-    m_Value: {x: 175.46593, y: 343.2401, z: 0}
+    m_Value: {x: 1.1439325, y: -3.0744855, z: -9.994794}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -502,9 +502,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 113.379944
+    m_Target: 1.6844339
     speed: 2
-    m_Value: 113.379944
+    m_Value: 1.6844339
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 17415
+  controlID: 5965
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -637,9 +637,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5c180000
+      m_SelectedIDs: 36ee0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 8efbfefffec2ffff28c3ffffe6c8ffffe6d0ffff38f1ffff0efbffffc07000000c7100002a71000086e00000f0e00000
+      m_ExpandedIDs: de7effff0480ffffb080ffffde81ffff5283ffff6eacffff34afffff78b0ffff1ab8ffff7cbeffff2abfffffb4c0ffffe4c1ffff92c2ffffc2c3ffff38c5ffff60ccffff56d5ffffe0daffffe8dbffff86e1ffff70e9ffff5eedffffdcf4ffff74f7ffff0efbffff12e9000042ee000090ee0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -731,22 +731,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Domino
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Domino
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Projetos\Keep-your-grandma-off-the-cult
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 46750000
-    m_LastClickedID: 30022
-    m_ExpandedIDs: 000000000a7500000c7500000e75000010750000127500001475000016750000187500001a7500001c7500001e75000000ca9a3b
+    m_SelectedIDs: ee730000
+    m_LastClickedID: 29678
+    m_ExpandedIDs: 00000000bc730000be730000c0730000c2730000c4730000c6730000c8730000ca730000cc730000ce7300002882000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -774,7 +774,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a7500000c7500000e75000010750000127500001475000016750000187500001a7500001c7500001e75000000ca9a3b
+    m_ExpandedIDs: 00000000bc730000be730000c0730000c2730000c4730000c6730000c8730000ca730000cc730000ce7300002882000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -799,10 +799,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5c180000
-    m_LastClickedInstanceID: 6236
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 106a0000f46c00000c6d000000000000ca6c0000aedf000094c7000060720000be720000a4720000
+    m_SelectedInstanceIDs: 36ee0000
+    m_LastClickedInstanceID: 60982
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: 106a0000f46c00000c6d000000000000ca6c0000aedf000094c7000060720000be720000a4720000accf00003ce100007ee100008ee1000086e100005ae100008c710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -829,7 +829,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 146
+  m_DirectoriesAreaWidth: 159
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -919,7 +919,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 128
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
