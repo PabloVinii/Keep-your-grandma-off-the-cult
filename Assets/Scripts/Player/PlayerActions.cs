@@ -2,32 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerActions : MonoBehaviour
 {
-    public float playerSpeed = 7f;
-    private Rigidbody2D rb;
-    private Vector2 playerDirection;
+    public List<Quest> questList = new List<Quest>();
+    
     public bool flashLightActive = false;
     public GameObject flashLight;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        float directionX = Input.GetAxisRaw("Horizontal");
-        float directionY = Input.GetAxisRaw("Vertical");
-
-        playerDirection = new Vector2(directionX, directionY).normalized;
+        
         ToggleFlashLight();
     }
 
-    void FixedUpdate()
+    public Quest GetQuestById(int id)
     {
-        rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
+        foreach (Quest quest in questList)
+        {
+            if (quest.questId == id)
+            {
+                return quest;
+            }
+        }
+
+        return null;
     }
 
     void ToggleFlashLight()

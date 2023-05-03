@@ -1,0 +1,7 @@
+﻿title: teste2
+tags:
+---
+Player: ei maluco qual teu nome
+Cleber: Cleber
+<<talk Cleber 2 $falou>>
+===
