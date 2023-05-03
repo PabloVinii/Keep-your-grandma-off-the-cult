@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
  
 public class DayNightScript : MonoBehaviour
 {
+    public static Action onDayChanged; // Action to call when day change
     public TextMeshProUGUI timeDisplay; // Display Time
     public TextMeshProUGUI dayDisplay; // Display Day
     public Volume ppv; // this is the post processing volume
@@ -53,6 +53,7 @@ public class DayNightScript : MonoBehaviour
         {
             hours = 0;
             days += 1;
+            onDayChanged?.Invoke();
         }
         ControlPPV(); // changes post processing volume after calculation
     }
