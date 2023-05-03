@@ -10,7 +10,7 @@ public class InventoryUi : MonoBehaviour
     public List<GameObject> itemSlots = new List<GameObject>(); // Lista de slots de itens no inventário
 
     [SerializeField] private InventorySystem inventory; // Referência para o inventário do jogador
-    private int numSlots = 0; // Número de slots criados
+    //private int numSlots = 0; // Número de slots criados
 
     private void Start()
     {
@@ -40,25 +40,6 @@ public class InventoryUi : MonoBehaviour
             InventorySlot inventorySlot = newItemSlot.GetComponentInChildren<InventorySlot>();
             inventorySlot.ItemData = item.data;
             inventorySlot.ItemCount = item.stackSize;
-        }
-    }
-
-    // Cria um novo slot de item no inventário
-    public void AddItemSlot()
-    {
-        GameObject newItemSlot = Instantiate(itemSlotPrefab, inventoryPanel.transform);
-        itemSlots.Add(newItemSlot);
-        numSlots++;
-    }
-
-    // Remove o último slot de item no inventário
-    public void RemoveItemSlot()
-    {
-        if (itemSlots.Count > 0)
-        {
-            Destroy(itemSlots[itemSlots.Count - 1]);
-            itemSlots.RemoveAt(itemSlots.Count - 1);
-            numSlots--;
         }
     }
 }
